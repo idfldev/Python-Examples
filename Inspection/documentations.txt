@@ -1,0 +1,30 @@
+xhtml2pdf
+
+<style>
+	#btn {
+    	width:100px;
+        height:30px;
+        border: none;
+        border-radius: 15px;
+        background-color: grey;
+        color: white;
+    }
+</style>
+<body>
+<button id="btn" onclick="myFunction()">None</button>
+
+<script>
+function myFunction() {
+  var btn = document.getElementById("btn");
+  
+  if (btn.innerText === "Pass") {
+    btn.innerText = "None";
+    btn.style.background = "grey";
+    btn.style.color = "white";
+  } else {
+    btn.innerText = "Pass";
+    btn.style.background = "green";
+    //btn.style.color = "red";
+  }
+}
+</script>

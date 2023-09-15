@@ -1,0 +1,2693 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <meta charset="UTF-8"> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/libs.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components.css' %}">
+    <link rel="stylesheet" href="{% static 'css/applications.css' %}">
+</head>
+<style>
+    /* Import css */
+    /* @import "./libs.css"; */
+    /* ========= css variables set up ======== */
+    @font-face {
+        font-family: SVN-Arial_3;
+        /* src: url("c:/static/fonts/preeti.ttf"); */
+        src: url("{% static '/fonts/SVN-Arial 3.ttf' %}")
+    }
+
+    body {
+        font-family: SVN-Arial_3;
+    }
+
+    .pages {
+        width: 80%;
+        border: .7px solid #626262;
+        margin: 30px auto 5px auto;
+        border-radius: 15px;
+        box-shadow: 1px 1px 5px #626262;
+        padding: 10px 30px;
+    }
+
+    header .head {
+        /* background-color: var(--light-3); */
+        margin: 5px;
+    }
+
+    header .logo {
+        height: 120px;
+        width: 120px;
+    }
+
+    header .logo img {
+        width: 100%;
+        height: 100%;
+    }
+
+    header .app-name {
+        margin: 0 10px;
+    }
+
+    .app-name h1 {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        margin: 0;
+        margin-top: 15px;
+        font-weight: bolder;
+    }
+
+    .app-name span {
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    header .idfl-number {
+        padding-top: 20px;
+        text-align: right;
+    }
+
+    .idfl-number span {
+        display: block;
+        font-size: 13px;
+    }
+
+    header .intruction {
+        border: 1px solid #626262;
+        border-radius: 5px;
+        padding: 2px;
+        background-color: rgba(211, 211, 211, 0.16);
+    }
+
+    #account {
+        text-align: center;
+    }
+
+    #account i {
+        font-size: 40px;
+        color: white;
+        margin-top: 5px;
+    }
+
+    #account span a {
+        text-decoration: none;
+        display: block;
+        color: white;
+        font-weight: 500;
+    }
+
+    /* ======== PAGE 1 ============ */
+    .intruction h2 {
+        margin: 1px 5px 0px 5px;
+        font-size: medium;
+        text-decoration: underline;
+        text-transform: uppercase;
+    }
+
+    .intruction p {
+        margin: 0 5px;
+    }
+
+    .intruction p b {
+        color: #ccc;
+        font-weight: 200;
+    }
+
+    header .list-box .instruct-list {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    /* ------- Section 1 --------- */
+    .pages .table-section {
+        margin-top: 10px;
+        background-color: aquamarine;
+        width: 100%;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        padding: 2px 0;
+    }
+
+    .table-section span {
+        display: block;
+        margin-left: 25px;
+        color: white;
+        font-size: 12px;
+    }
+
+    .pages table {
+        width: 100%;
+        margin-top: -2px;
+        margin-left: 0px;
+        border-spacing: 0;
+    }
+
+    table tr .td-first {
+        width: 12.2%;
+        padding-left: 25px;
+    }
+
+    table tr td {
+        border: solid 1px #000;
+        padding: 5px;
+        width: 20%;
+    }
+
+    table tr td input[type=text] {
+        width: 94%;
+        height: 20px;
+        padding: 5px;
+        font-size: 15px;
+        font-weight: 700;
+        outline: none;
+        border: none;
+        margin-left: 10px;
+    }
+
+    table tr td textarea {
+        width: 99%;
+        height: 20px;
+        margin: 0;
+        border: none;
+        outline: none;
+    }
+
+    table tbody tr .currency {
+        margin-left: 10px;
+    }
+
+    table tr td #currency {
+        text-transform: uppercase;
+        width: 30%;
+        font-size: 13px;
+    }
+
+    table tr td .checked {
+        margin-left: 15px;
+    }
+
+    /* ======= Page 2 ============= */
+    #page2 .section .head-section {
+        background-color: aliceblue;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        padding: 2px;
+    }
+
+    #page2 .section .head-section span {
+        color: white;
+        margin-left: 20px;
+        display: block;
+        font-size: 14px;
+    }
+
+    #page2 .section .info {
+        color: tomato;
+        padding: 0px 0px 0px 20px;
+        border: .8px solid #626262;
+    }
+
+    #page2 .section .head-title {
+        border: .8px solid #626262;
+        background-color: bisque;
+    }
+
+    #page2 .section .head-title .col-4 {
+        border: .8px solid #626262;
+        width: 38.45%;
+    }
+
+    #page2 .section .box-info {
+        border: .8px solid #626262;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+
+    /* ---- row-1 ---- */
+    .head-title .standard {
+        margin-left: 18px;
+    }
+
+    .head-title .standard span {
+        display: block;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .head-title .certificate {
+        margin: 5px 18px;
+    }
+
+    .head-title .certificate span {
+        display: block;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    /* ---------- standard information ------------ */
+    .section .row .col-5 {
+        border-right: .8px solid #626262;
+        padding: 5px;
+    }
+
+    .standar-info input[type=checkbox] {
+        width: 30px;
+        height: 30px;
+        float: left;
+    }
+
+    .standar-info span {
+        padding: 1px;
+        margin-left: 20px;
+        font-weight: 700;
+        font-size: 13px;
+        display: block;
+        margin-left: 40px;
+    }
+
+    .standar-info .note {
+        color: tomato;
+        margin-left: 10px;
+    }
+
+    /* -------- certificate status --------- */
+    .row .status-col {
+        border-right: .8px solid #626262;
+    }
+
+    .section .status-col .status {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 5px;
+    }
+
+    .section .status-col .status div {
+        margin-bottom: 10px;
+    }
+
+    .status input[type=checkbox] {
+        width: 30px;
+        height: 30px;
+        float: left;
+    }
+
+    .status span {
+        display: block;
+        margin-left: 40px;
+    }
+
+    /* ------- Previously/ Currently --------- */
+    .box-info .row1 {
+        display: flex;
+        border-bottom: .8px solid #626262;
+    }
+
+    .row1 .col-5 {
+        border-right: .8px solid #626262;
+    }
+
+    .row1 .col-2 {
+        border-right: .8px solid #626262;
+    }
+
+    .row1 .col-6 .row {
+        border-bottom: .8px solid #626262;
+    }
+
+    .row1 .col-6 .row input[type=checkbox] {
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+        float: left;
+    }
+
+    .row1 .col-6 .row span {
+        display: block;
+        margin-left: 40px;
+    }
+
+    .row1 .col-6 .row .input-label {
+        margin: 0 10px;
+        border-right: 1px solid #626262;
+        padding-right: 10px;
+        width: 40%;
+    }
+
+    .row1 .col-6 .row .input-text {
+        padding: 5px;
+        font-size: 15px;
+        font-weight: bold;
+        outline: none;
+        border: none;
+        width: 50%;
+    }
+
+    /* ======== PAGE 3 ============ */
+    /* ---------- section 4 -------------- */
+    #page3 .section-4-info {
+        border: .8px solid #626262;
+        margin-bottom: -2px;
+    }
+
+    #page3 .section-4-info .col-6 {
+        border-right: .8px solid #626262;
+    }
+
+    #page3 .section-4-info .col-6 p {
+        margin: 5px 20px;
+        font-size: larger;
+    }
+
+    #page3 .section-4-info .col-6 input[type=checkbox] {
+        margin: 5px 20px;
+        width: 20px;
+        height: 20px;
+        float: left;
+    }
+
+    #page3 .section-4-info .col-6 span {
+        display: block;
+        margin-top: 5px;
+    }
+
+    .pages .section-4 {
+        margin-top: 10px;
+        background-color: #9f9191;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        padding: 2px;
+    }
+
+    .pages .section-4 span {
+        color: white;
+        display: block;
+        font-size: 14px;
+        margin-left: 20px;
+    }
+
+    #page3 .section4-content {
+        border: .8px solid #626262;
+        border-top: none;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    /* ---------- section 4 notes -------------- */
+    #page3 .section4-content p {
+        margin-left: 15x;
+        margin: 3px 20px;
+        width: 90%;
+    }
+
+    #page3 .section4-content .row {
+        border-top: .8px solid #626262;
+    }
+
+    #page3 .section4-content .row .col-left {
+        border-right: .8px solid #9f9191;
+    }
+
+    #page3 .section4-content .input-4 {
+        width: 96%;
+        height: 70%;
+        padding: 5px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        outline: none;
+    }
+
+    #page3 .notes {
+        border-top: .8px solid #626262;
+    }
+
+    #page3 .notes p {
+        color: tomato;
+        margin: 5px 20px;
+    }
+
+    /* ======== PAGE 4 ============ */
+    /* ---------- section 5 -------------- */
+    #page4 .section {
+        margin-top: 10px;
+        background-color: bisque;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        padding: 2px;
+    }
+
+    #page4 .section span {
+        display: block;
+        font-size: 14px;
+        color: white;
+        margin-left: 20px;
+    }
+
+    #page4 .section-5 {
+        border: .8px solid #626262;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+
+    #page4 .section-5 .info {
+        margin: 2px 20px;
+    }
+
+    #page4 .section-5 .info b {
+        margin-bottom: 10px;
+        text-decoration: underline;
+    }
+
+    #page4 .section-5 .info p {
+        margin: 10px 0px;
+    }
+
+    /* ======== PAGE 5 ============ */
+    #page5 .heading5 {
+        background-color: #9f9191;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+
+    #page5 .heading5 span {
+        display: block;
+        margin: 2px 10px;
+        color: white;
+    }
+
+    #page5 .heading5 span i {
+        color: white;
+        font-weight: bold;
+    }
+
+    #page5 .heading5 span u {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* --------------------- */
+    #page5 .section-5 .col-left .line {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    #page5 .section-5 .col-right {
+        border-bottom: .8px solid #626262;
+    }
+
+    #page5 .section-5 .col-6 .input-4 {
+        width: 96%;
+        height: 71%;
+        padding: 5px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        outline: none;
+    }
+
+    #page5 .page-4-section-5 {
+        border: .8px solid #626262;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    #page5 .page-4-section-5 .col-left {
+        border-right: .8px solid #626262;
+        border-bottom: .8px solid #626262;
+    }
+
+    #page5 .page-4-section-5 .col-left input[type=checkbox] {
+        width: 30px;
+        height: 30px;
+        float: left;
+        margin: 5px;
+        margin-left: 10px;
+    }
+
+    #page5 .page-4-section-5 .col-left .line {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    #page5 .page-4-section-5 .col-left span {
+        display: block;
+        margin: 0px 5px;
+    }
+
+    #page5 .page-4-section-5 .col-left .other-label {
+        width: 39%;
+        margin: 0px 5px;
+    }
+
+    #page5 .page-4-section-5 .col-left input[type=text] {
+        height: 28px;
+        padding: 5px;
+        font-size: 15px;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        float: right;
+    }
+
+    #page5 .page-4-section-5 .col-right {
+        border-bottom: .8px solid #626262;
+    }
+
+    #page5 .page-4-section-5 .col-6 .input-4 {
+        width: 96%;
+        height: 30px;
+        padding: 5px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        outline: none;
+    }
+
+    /* ======== PAGE 6 ============ */
+    .pages .section-title {
+        /* background-color: var(--blue-5); */
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        padding: 2px;
+    }
+
+    .pages .section-title span {
+        color: white;
+        display: block;
+        margin: 0px 10px;
+    }
+
+    #page6 .section-6 {
+        border: .8px solid #626262;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .pages .intruc {
+        border: .8px solid #626262;
+        /* background-color: var(--light-1); */
+        padding: 3px 10px;
+    }
+
+    .pages .intruc h2 {
+        font-size: 15px;
+        font-weight: bold;
+        text-decoration: underline;
+        margin: 2px 10px 4px 10px;
+    }
+
+    .pages .intruc p {
+        margin: 0 10px 4px 10px;
+    }
+
+    #page6 .section-6 .row {
+        border-bottom: .8px solid #626262;
+    }
+
+    #page6 .section-6 .row .col-10 {
+        border-right: .8px solid #626262;
+    }
+
+    #page6 .section-6 .row .col-2 {
+        margin: auto 20px;
+    }
+
+    #page6 .section-6 .row .col-2 div {
+        margin: 5px;
+    }
+
+    #page6 .section-6 .text-alert {
+        margin: 4px 10px;
+        font-size: 14px;
+    }
+
+    #page6 .section-6 .row .col-2 div label {
+        color: red;
+    }
+
+    /* ------ section-6-heading ------- */
+    #page6 .section-6 .section-6-heading .row {
+        /* background-color: var(--light-1); */
+        justify-items: center;
+        align-self: center;
+        text-align: center;
+    }
+
+    .section-6-heading .row .col-3 {
+        border-right: .8px solid #626262;
+    }
+
+    .section-6-heading .row .col-1 {
+        border-right: .8px solid #626262;
+    }
+
+    .section-6-heading .row .col-certificate {
+        font-size: 13px;
+        font-weight: bold;
+        display: block;
+        margin: 10px 5px;
+    }
+
+    #page6 .section-6 .section-6-datainput textarea {
+        width: 100%;
+        height: 80px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        outline: none;
+        border-radius: 4px;
+        font-size: 16px;
+        resize: none;
+        margin-bottom: -5px;
+        overflow: hidden;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+    }
+
+    #page6 .section-6 .section-6-datainput input {
+        height: 50px;
+        width: 75%;
+        /* margin: 5px; */
+        outline: none;
+        border: none;
+        padding: 1px 5px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    #page6 .section-6 .section-6-datainput select {
+        /* appearance: none; */
+        width: 100%;
+        padding: 2px 20px;
+        height: 25px;
+        outline: none;
+        border-radius: 10px;
+        position: relative;
+        top: -16px;
+        z-index: -10;
+    }
+
+    /* ======== PAGE 7 ============ */
+    #page7 .section-page-7 {
+        border: .8px solid #626262;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    #page7 .section-page-7 .notes {
+        /* background-color: var(--light-1); */
+        border-bottom: .8px solid #626262;
+    }
+
+    #page7 .section-page-7 .notes p {
+        margin: 0px 10px;
+        font-weight: bold;
+    }
+
+    #page7 .section-page-7 .row {
+        border-bottom: .8px solid #626262;
+        justify-items: center;
+        align-items: center;
+    }
+
+    #page7 .section-page-7 .row .col-10 {
+        border-right: .8px solid #626262;
+    }
+
+    #page7 .section-page-7 .row .col-10 p {
+        margin: 4px 10px;
+    }
+
+    #page7 .section-page-7 .row .col-2 div {
+        margin-left: 10px;
+    }
+
+    #page7 .section-page-7 .note-text {
+        border-bottom: .8px solid #626262;
+    }
+
+    #page7 .section-page-7 .note-text .ip-text {
+        width: 99%;
+        height: 40px;
+        padding: 5px;
+        font-size: 14px;
+        font-weight: bold;
+        outline: none;
+        border: none;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    /* ======== PAGE 8 ============ */
+    #page8 .section7-part2 {
+        border: .8px solid #626262;
+        border-radius: 10px;
+    }
+
+    #page8 .section7-part2 .part2-notes {
+        border-bottom: .8px solid #626262;
+    }
+
+    #page8 .section7-part2 .part2-notes p {
+        margin: 2px 10px;
+        font-weight: bold;
+    }
+
+    #page8 .section7-part2 .heading .title {
+        /* background-color: var(--light-1); */
+        border-bottom: .8px solid #626262;
+    }
+
+    #page8 .section7-part2 .heading .row .col-5 {
+        border-right: .8px solid #626262;
+    }
+
+    #page8 .section7-part2 .heading .title .col-7 span {
+        margin: 5px 10px;
+        display: block;
+        font-weight: bold;
+    }
+
+    #page8 .section7-part2 .heading .row {
+        border-bottom: .8px solid #626262;
+    }
+
+    #page8 .section7-part2 .heading .text-ip {
+        height: 70px;
+        width: 75%;
+        margin: 10px;
+        outline: none;
+        border: none;
+        padding: 5px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    #page8 .section7-part2 .heading .author-title {
+        /* background-color: var(--light-1); */
+        border-bottom: .8px solid #626262;
+    }
+
+    #page8 .section7-part2 .heading .author-title p {
+        margin: 5px 10px;
+        font-weight: bold;
+    }
+
+    #page8 .section7-part2 .heading .author-sign {
+        height: 80px;
+        border-bottom: .8px solid #626262;
+    }
+
+    #page8 .section7-part2 .heading .row .col-5 {
+        border-right: .8px solid #626262;
+    }
+
+    #page8 .section7-part2 .heading .row .col-5 span {
+        margin: 5px 10px;
+        font-weight: bold;
+        display: block;
+    }
+
+    #page8 .section7-part2 .heading .row .col-7 input[type=text] {
+        font-weight: bold;
+        padding: 5px;
+        border: none;
+        outline: none;
+        width: 98%;
+        height: 30px;
+    }
+
+    #page8 .section7-part2 .heading .row p {
+        margin: 5px 10px;
+        color: red;
+    }
+
+    #page8 .section7-part2 .heading .row .date-label span {
+        display: block;
+        margin-top: 15px;
+    }
+
+    #page8 .section7-part2 .heading .row .col-7 input[type=date] {
+        font-weight: bold;
+        padding: 8px;
+        border: none;
+        outline: none;
+        height: 30px;
+    }
+
+    /* ======= Footer ================ */
+    footer {
+        /* background-color: var(--blue-4); */
+        border-radius: 5px;
+        /* padding: 2px 5px; */
+        display: flex;
+        justify-content: space-around;
+        margin: 0;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    footer ul {
+        list-style: none;
+        margin: 5px 0;
+        padding: 0;
+        width: 35%;
+    }
+
+    footer ul li {
+        margin: 0;
+        padding: 0;
+        font-size: small;
+        /* color: var(--light-1); */
+    }
+
+    footer .footer-right {
+        width: 20%;
+        text-align: right;
+    }
+
+    footer .footer-right .page-number {
+        margin-top: 25px;
+        margin-bottom: 5px;
+    }
+
+    /* ======= Pagination ============ */
+    .pagination {
+        width: 20px;
+        height: 200px;
+        text-align: center;
+        position: fixed;
+        top: 100px;
+        left: 10px;
+    }
+
+    .pagination span {
+        display: block;
+        border: none;
+        margin: 5px 0;
+    }
+
+    .pagination span .page_num {
+        text-decoration: none;
+        font-size: medium;
+        line-height: 20px;
+        color: white;
+        width: 20px;
+        height: 20px;
+        display: block;
+        border-radius: 3px;
+        /* background-color: var(--blue-3); */
+    }
+
+    .pagination span .page_num:hover,
+    .pagination span .page_num:active {
+        /* background-color: var(--blue-5); */
+    }
+</style>
+
+<body>
+    <!-- ====== Header ======= -->
+    <div id="header">
+        <nav>
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <!-- <img src="" alt=""> -->
+                        <h2>IDFL Việt Nam</h2>
+                    </div>
+                    <div class="col-6">
+                        <ul>
+                            <li><a href="">Testing</a></li>
+                            <li><a href="">Audit</a></li>
+                            <li><a href="">Application Forms</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-2">
+                        <div id="account">
+                            <i class="fa fa-user"></i>
+                            <span><a href="">Customer 1</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- ========== End Header ========= -->
+    <!-- ====== Page contents======= -->
+    <div id="wrap-container" class="wrap-container">
+        <form target="_blank"
+            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSenN7xSwEeJyVV3jTbtQ2PiLLXQkba4EpebExe3tpm9h0pWyw/formResponse"
+            method="post">
+            <!-- ========== Page 1 ============= -->
+            <div id="page1" class="pages">
+                <!-- ========== Header ============= -->
+                <header class="form-container">
+                    <!-- ====== Heading ============ -->
+                    <div class="head row">
+                        <div class="logo col-3">
+                            <img src="/images/logo-idfl.png" alt="">
+                        </div>
+                        <div class="app-name col-6">
+                            <h1>application</h1>
+                            <span>Global Recycle Standard (GRS)</span>
+                            <span>Recycle Claim Standard (RCS)</span>
+                        </div>
+                        <div class="idfl-number col-4">
+                            <span>IDFL-FF-GRS01 V1.0 EN</span>
+                            <span>Date: Sep 2021</span>
+                        </div>
+                    </div>
+                    <!-- ====== INTRUCTION ========= -->
+                    <div class="intruction">
+                        <h2>intruction / hướng dẫn:</h2>
+                        <p>Please completely fill in all applicable information (section 1-7) and send applications
+                            to IDFL.
+                            If known, please also copy regional certification manager / auditor.
+                        </p>
+                        <p>Vui lòng điền đầy đủ thông tin phù hợp (phần 1-7) và gửi đơn đăng ký đến IDFL tại
+                            <b>audits@idfl.com.</b> Nếu biết,
+                            vui lòng gửi kèm cho Giám đốc Chứng nhận / Đánh giá viên Phụ trách Khu vực.
+                        </p>
+                        <div class="row list-box">
+                            <div class="col-6">
+                                <ul class="instruct-list">
+                                    <li>Section 1 Applicant Information <br>
+                                        Phần 1 Thông tin bên Đăng ký
+                                    </li>
+                                    <li>Section 2 Payment Information <br>
+                                        Phần 2 Thông tin Thanh toán
+                                    </li>
+                                    <li>Section 3 Standards <br>
+                                        Phần 3 Tiêu chuẩn
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <ul class="instruct-list">
+                                    <li>Section Material Recycling (Recyclers)<br>
+                                        Phần 4 Tái chế Vật liệu (Nhà Cung cấp Vật liệu Tái chế)
+                                    </li>
+                                    <li>Section 5 Products <br>
+                                        Phần 5 Sản phẩm
+                                    </li>
+                                    <li>Section 6 Facilities and Processes <br>
+                                        Phần 6 Cơ sở Vật chất và Quy trình
+                                    </li>
+                                    <li>Section 7 Certification Information <br>
+                                        Phần 7 Thông tin Chứng nhận
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- ========== End Header ========= -->
+                <div class="table-section">
+                    <span>SECTION 1. APPLICANT INFORMATION</span>
+                    <span>PHẦN 1. THÔNG TIN BÊN ĐĂNG KÝ</span>
+                </div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="td-first">Company Name / Tên công ty:</td>
+                            <!-- uppercase -->
+                            <td><input name="entry.1065687306" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-first">Company Name (English): <br>
+                                Tên công ty (Tiếng anh):</td>
+                            <td><input name="entry.1396075535" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-first">Address / Địa chỉ:</td>
+                            <td><input name="entry.907990680" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-first">City / Thành phố:</td>
+                            <td><input name="entry.1004111957" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-first">Country / Quốc gia:</td>
+                            <td><input name="entry.268821435" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-first">Contact Person / Người liên hệ:</td>
+                            <td><input name="entry.273063647" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-first">Title / Chức vụ:</td>
+                            <td><input name="entry.1181259738" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-first">Phone No. / Số điện thoại:</td>
+                            <td><input name="entry.1150884750" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-first">Email:</td>
+                            <td><input name="entry.656863114" type="text" style="color: blue;"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- table section 2 -->
+                <div class="table-section">
+                    <span>SECTION 2. PAYER INFORMATION</span>
+                    <span>PHẦN 2. THÔNG TIN THANH TOÁN</span>
+                </div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="td-first">Payment Currency <br>
+                                Đơn vị tiền tệ thanh toán
+                            </td>
+                            <td>
+                                <div class="currency">
+                                    <input type="radio" name="entry.110817852" value="VND">VND
+                                    <input type="radio" name="entry.110817852" value="USD">USD
+                                    <input type="radio" name="entry.110817852" value="RMB">RMB
+                                    <input type="radio" name="entry.110817852" value="EURO">EURO
+                                    <input type="radio" name="entry.110817852" value="TWD">TWD
+                                    <input type="radio" name="entry.110817852" value="TRY">TRY
+                                    <input type="radio" name="entry.110817852" value="CHF">CHF
+                                    <input type="radio" name="entry.110817852" value="INR">INR
+                                    <input type="radio" name="entry.110817852" value="BDT">BDT
+                                    <input type="radio" name="entry.110817852" value="JPY">JPY
+                                    <input type="radio" name="entry.110817852" value="PKR">PKR
+                                    <input type="radio" name="entry.110817852" value="OTHER">OTHER
+                                    <input name="entry.1368675126" id="currency" type="text"
+                                        placeholder="Enter currency text">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-first">Tax ID # / Mã số Thuế </td>
+                            <td><input name="entry.241461181" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-first">Payer Company Information<br>
+                                Thông Tin Thanh Toán
+                            </td>
+                            <td>
+                                <!-- uppercase -->
+                                <input name="entry.1675246759" class="checked" type="checkbox"
+                                    value="Same As Application / Giống Bên Đăng Ký"><b>Same As Application</b> /
+                                <b>Giống Bên Đăng Ký</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-first">Company Name / Tên công ty:</td>
+                            <!-- uppercase -->
+                            <td><input name="entry.2080991334" type="text" name="entry.2080991334"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-first">Company Name (English): <br>
+                                Tên công ty (Tiếng anh):</td>
+                            <td><input name="entry.1765652577" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-first">Address / Địa chỉ:</td>
+                            <td><input name="entry.695465787" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-first">City / Thành phố:</td>
+                            <td><input name="entry.739007334" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-first">Country / Quốc gia:</td>
+                            <td><input name="entry.2111624360" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-first">Contact Person / Người liên hệ:</td>
+                            <td><input name="entry.1487195202" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-first">Title / Chức vụ:</td>
+                            <td><input name="entry.1420220815" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-first">Phone No. / Số điện thoại:</td>
+                            <td><input name="entry.731402059" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-first">Email:</td>
+                            <td><input name="entry.1931048314" type="text" style="color: blue;"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- ========== Footer ============= -->
+                <footer class="footer">
+                    <ul>
+                        <li>IDFL Salt Lake: na.audits@idfl.com</li>
+                        <li>IDFL Europe: eu.audits@idfl.com</li>
+                        <li>IDFL Turkey: turkey@idfl.com</li>
+                        <li>IDFL Pakistan: pakistan@idfl.com</li>
+                        <li>IDFL Ukraine: ukraine@idfl.com</li>
+                    </ul>
+                    <ul>
+                        <li>IDFL China: audits@idfl.com</li>
+                        <li>IDFL Taipei: tw.audits@idfl.com</li>
+                        <li>IDFL Vietnam: vn.audits@idfl.com</li>
+                        <li>IDFL India: india@idfl.com</li>
+                        <li>IDFL Bangladesh: bangladesh@idfl.com</li>
+                    </ul>
+                    <ul class="footer-right">
+                        <li>www.idfl.com</li>
+                        <li class="page-number">Page 2 of 8</li>
+                        <li>© IDFL</li>
+                    </ul>
+                </footer>
+                <!-- ========== End Footer ========= -->
+            </div>
+            <!-- ========== Page 2 ============= -->
+            <div id="page2" class="pages">
+                <!-- ========== Header ============= -->
+                <header class="form-container">
+                    <!-- ====== Heading ============ -->
+                    <div class="head row">
+                        <div class="logo col-3">
+                            <img src="/images/logo-idfl.png" alt="">
+                        </div>
+                        <div class="app-name col-6">
+                            <h1>application</h1>
+                            <span>Global Recycle Standard (GRS)</span>
+                            <span>Recycle Claim Standard (RCS)</span>
+                        </div>
+                        <div class="idfl-number col-4">
+                            <span>IDFL-FF-GRS01 V1.0 EN</span>
+                            <span>Date: Sep 2021</span>
+                        </div>
+                    </div>
+                </header>
+                <!-- ========== End Header ========= -->
+                <div class="section">
+                    <div class="head-section">
+                        <span>SECTION 3. STANDARDS</span>
+                        <span>PHẦN 3. TIÊU CHUẨN</span>
+                    </div>
+                    <div class="info">
+                        <p>IMPORTANT TRANSACTION CERTIFICATE POLICY FOR SCOPE CERTIFICATE TRANSFERS: IDFL MAY NOT issue
+                            a transaction certificate for shipments made before the validity date of an IDFL scope
+                            certificate. <br><br>
+                            CHÍNH SÁCH QUAN TRỌNG VỀ CHỨNG NHẬN GIAO DỊCH ĐỐI VỚI VIỆC CHUYỂN ĐỔI TỔ CHỨC CHỨNG NHẬN:
+                            IDFL CÓ THỂ KHÔNG cấp chứng nhận giao dịch cho những lô hàng được thực hiện trước ngày có
+                            hiệu lực của Chứng nhận Phạm vi do IDFL ban hành
+                        </p>
+                    </div>
+                    <div class="row head-title">
+                        <div class="col-4">
+                            <div class="standard">
+                                <span>STANDARD</span>
+                                <span>TIÊU CHUẨN</span>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="certificate">
+                                <span>CERTIFICATION STATUS</span>
+                                <span>TRẠNG THÁI CHỨNG NHẬN</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-info">
+                        <div class="row1">
+                            <div class="col-5">
+                                <div class="standar-info">
+                                    <input type="checkbox">
+                                    <span>Global Recycled Standard (GRS) </span>
+                                    <span> Tiêu chuẩn Tái chế Toàn cầu (GRS)</span>
+                                    <p class="note">
+                                        Note: IDFL may <b>not</b> issue a GRS scope certificate to an organization which
+                                        holds
+                                        an <b>RCS</b> scope certificate with another certification body, unless the RCS
+                                        scope
+                                        certificate is in the process of being transferred to IDFL.
+                                    </p>
+                                    <p class="note">
+                                        Lưu ý: IDFL không được cấp chứng nhận phạm vi RCS cho tổ chức có chứng nhận phạm
+                                        vi GRS
+                                        được cấp bởi tổ chức chứng nhận khác, trừ khi chứng nhận phạm vi GRS đang trong
+                                        quá
+                                        trình chuyển sang IDFL.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-2 status-col">
+                                <div class="status">
+                                    <div>
+                                        <input type="checkbox" name="certificate">
+                                        <span>Initial Certification</span>
+                                        <span>Chứng nhận Lần đầu</span>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="certificate">
+                                        <span>Renewal Certification</span>
+                                        <span>Tái Chứng nhận</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="row-check">
+                                        <input type="checkbox">
+                                        <span>Previously/ Currently GRS certified with another Certification Body
+                                            (CB)*</span>
+                                        <span>Chứng nhận GRS trước đó/ hiện tại được cấp bởi một Tổ chức Chứng nhận
+                                            khác*</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="row-check">
+                                        <input type="checkbox">
+                                        <span>Previously/ Currently RCS certified with another Certification Body
+                                            (CB)*</span>
+                                        <span>Chứng nhận RCS trước đó/ hiện tại được cấp bởi một Tổ chức Chứng nhận
+                                            khác*</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <span class="input-label">Previous Project / License No: <br> Số dự án /Giấy phép
+                                        trước:</span>
+                                    <input class="input-text" type="text" placeholder="Click here to enter text">
+                                </div>
+                                <div class="row">
+                                    <span class="input-label">Previous Certification Body: <br> Tổ chức Chứng nhận
+                                        trước:</span>
+                                    <input class="input-text" type="text" placeholder="Click here to enter text">
+                                </div>
+                                <div class="row">
+                                    <span class="input-label">Certification Expiration Date: <br> Ngày Hết hạn Chứng
+                                        nhận:</span>
+                                    <input class="input-text" type="text" placeholder="Click here to enter text">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row1" style="border-bottom: none;">
+                            <div class="col-5">
+                                <div class="standar-info">
+                                    <input type="checkbox">
+                                    <span>Recycled Claim Standard (RCS) </span>
+                                    <span> Tiêu chuẩn Tuyên bố Tái chế (RCS)</span>
+                                    <p class="note">
+                                        Note: IDFL may not issue an <b>RCS</b> scope certificate to an
+                                        organization which holds a <b>GRS</b> scope certificate with
+                                        another certification body, unless the GRS scope certificate
+                                        is in the process of being transferred to IDFL.
+                                    </p>
+                                    <p class="note">
+                                        Lưu ý: IDFL <b>không được</b> cấp chứng nhận phạm vi RCS cho tổ
+                                        chức có chứng nhận phạm vi <b>GRS</b> được cấp bởi tổ chức chứng
+                                        nhận khác, trừ khi chứng nhận phạm vi GRS đang trong quá trình chuyển sang IDFL
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-2 status-col">
+                                <div class="status">
+                                    <div>
+                                        <input type="checkbox" name="certificate">
+                                        <span>Initial Certification</span>
+                                        <span>Chứng nhận Lần đầu</span>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="certificate">
+                                        <span>Renewal Certification</span>
+                                        <span>Tái Chứng nhận</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="row-check">
+                                        <input type="checkbox">
+                                        <span>Previously/ Currently RCS certified with another Certification Body (CB)*
+                                        </span>
+                                        <span>Chứng nhận RCS trước đó/ hiện tại được cấp bởi một Tổ chức Chứng nhận
+                                            khác*
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="row-check">
+                                        <input type="checkbox">
+                                        <span> Previously/ Currently GRS certified with another Certification Body
+                                            (CB)*</span>
+                                        <span>Chứng nhận GRS trước đó/ hiện tại được cấp bởi một Tổ chức Chứng nhận
+                                            khác*</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <span class="input-label">Previous Project / License No: <br> Số dự án /Giấy phép
+                                        trước:</span>
+                                    <input class="input-text" type="text" placeholder="Click here to enter text">
+                                </div>
+                                <div class="row">
+                                    <span class="input-label">Previous Certification Body: <br> Tổ chức Chứng nhận
+                                        trước:</span>
+                                    <input class="input-text" type="text" placeholder="Click here to enter text">
+                                </div>
+                                <div class="row" style="border-bottom: none;">
+                                    <span class="input-label">Certification Expiration Date: <br> Ngày Hết hạn Chứng
+                                        nhận:</span>
+                                    <input class="input-text" type="text" placeholder="Click here to enter text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ========== Footer ============= -->
+                <footer class="footer">
+                    <ul>
+                        <li>IDFL Salt Lake: na.audits@idfl.com</li>
+                        <li>IDFL Europe: eu.audits@idfl.com</li>
+                        <li>IDFL Turkey: turkey@idfl.com</li>
+                        <li>IDFL Pakistan: pakistan@idfl.com</li>
+                        <li>IDFL Ukraine: ukraine@idfl.com</li>
+                    </ul>
+                    <ul>
+                        <li>IDFL China: audits@idfl.com</li>
+                        <li>IDFL Taipei: tw.audits@idfl.com</li>
+                        <li>IDFL Vietnam: vn.audits@idfl.com</li>
+                        <li>IDFL India: india@idfl.com</li>
+                        <li>IDFL Bangladesh: bangladesh@idfl.com</li>
+                    </ul>
+                    <ul class="footer-right">
+                        <li>www.idfl.com</li>
+                        <li class="page-number">Page 2 of 8</li>
+                        <li>© IDFL</li>
+                    </ul>
+                </footer>
+                <!-- ========== End Footer ========= -->
+            </div>
+            <!-- ========== Page 3 ============= -->
+            <div id="page3" class="pages">
+                <!-- ========== Header ============= -->
+                <header class="form-container">
+                    <!-- ====== Heading ============ -->
+                    <div class="head row">
+                        <div class="logo col-3">
+                            <img src="/images/logo-idfl.png" alt="">
+                        </div>
+                        <div class="app-name col-6">
+                            <h1>application</h1>
+                            <span>Global Recycle Standard (GRS)</span>
+                            <span>Recycle Claim Standard (RCS)</span>
+                        </div>
+                        <div class="idfl-number col-4">
+                            <span>IDFL-FF-GRS01 V1.0 EN</span>
+                            <span>Date: Sep 2021</span>
+                        </div>
+                    </div>
+                </header>
+                <!-- --- SECTION 4 --- -->
+                <div class="section-4">
+                    <span>SECTION 4. MATERIAL RECYCLING (RECYCLERS)</span>
+                    <span>PHẦN 4. NHÀ CUNG CẤP VẬT LIỆU TÁI CHẾ</span>
+                </div>
+                <div class="row section-4-info">
+                    <div class="col-6">
+                        <p>Does your organization or any of your facilities plan to perform recycling processes? </p>
+                        <p>Tổ chức hay bất cứ một đơn vị nhà máy nào của bạn có kế hoạch thực hiện các công đoạn tự tái
+                            chế
+                            không?
+                        </p>
+                    </div>
+                    <div class="col-6" style="border-right: none;">
+                        <input type="checkbox">
+                        <span>NO MATERIAL RECYCLING<br>KHÔNG CÓ VẬT LIỆU TÁI CHẾ</span>
+                        <input type="checkbox">
+                        <span>YES, POST-CONSUMER MATERIALS*<br>CÓ, VẬT LIỆU SAU TIÊU DÙNG*</span>
+                        <input type="checkbox">
+                        <span>YES, PRE-CONSUMER MATERIALS*<br>CÓ, VẬT LIỆU TRƯỚC TIÊU DÙNG*</span>
+                        <input type="checkbox">
+                        <span>YES, BOTH POST & PRE-CONSUMER MATERIALS*<br>CÓ, CẢ VẬT LIỆU TRƯỚC & SAU TIÊU DÙNG*</span>
+                    </div>
+                </div>
+                <div class="section4-content">
+                    <p>*If you answered YES, please provide the below information regarding your recycling process.</p>
+                    <p>* Nếu bạn trả lời CÓ, vui lòng cung cấp thông tin dưới đây về quy trình tái chế của bạn.</p>
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <p>
+                                Please describe the input waste materials (i.e. reclaimed material)
+                                being recycled. Please identify each as post-consumer or pre-consumer. <br>
+                                Vui lòng mô tả các vật liệu phế thải đầu vào (tức là vật liệu tái chế)
+                                đang được tái chế. Vui lòng xác định là sau tiêu dùng hay trước tiêu dùng.
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <input class="input-4" type="text" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <p>
+                                Estimated Number of collectors / concentrators of waste materials
+                                (i.e. reclaimed material suppliers)? <br>
+                                Ước tính Số lượng đơn vị thu gom /đơn vị tập trung vật liệu phế thải
+                                (tức là các nhà cung cấp thu hồi vật liệu tái chế)?
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <p>
+                                General Locations of (Region / Country) of collectors / concentrators
+                                (i.e. reclaimed material suppliers)? <br>
+                                Vị trí chung của (Khu vực / Quốc gia) của các nhà thu gom / tập trung
+                                (tức là các nhà cung cấp thu hồi vật liệu tái chế)?
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <p>
+                                General list of activities / processes of collectors and concentrators
+                                (i.e. Collecting, Opening, Sorting, Flaking, etc.): <br>
+                                Danh sách chung các hoạt động / quy trình của đơn vị thu gom và đơn vị
+                                tập trung (tức là Thu gom, Mở, Phân loại, Cắt nhỏ, v.v.):
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+                    <div class="notes">
+                        <p>
+                            NOTE: Reclaimed Material Suppliers are not required to be certified to the GRS/RCS as long
+                            as they are only involved
+                            in the material collection or material concentration processes. However, Material Recyclers
+                            will be required to keep
+                            records per the GRS/RCS requirements. Reclaimed Material suppliers may be subject to
+                            inspection, as mentioned in the
+                            Reclaimed Material Supplier Agreement, Appendix B.
+                        </p>
+                        <p>
+                            LƯU Ý: Các nhà Cung cấp Thu hồi Vật liệu Tái chế không bắt buộc phải được chứng nhận GRS /
+                            RCS miễn là họ tham gia
+                            trong quá trình thu gom nguyên liệu hoặc tập trung nguyên liệu. Tuy nhiên, Đơn vị tái chế
+                            vật liệu sẽ được yêu cầu lưu giữ hồ sơ
+                            theo yêu cầu của Tiêu chuẩn GRS / RCS. Các Nhà Cung cấp Thu hồi Vật liệu Tái chế có thể được
+                            kiểm tra, như đã đề cập trong Thỏa
+                            thuận về Nhà Cung cấp Thu hồi Vật liệu Tái chế, Phụ lục B.
+                        </p>
+                    </div>
+                </div>
+                <!-- ========== Footer ============= -->
+                <footer class="footer">
+                    <ul>
+                        <li>IDFL Salt Lake: na.audits@idfl.com</li>
+                        <li>IDFL Europe: eu.audits@idfl.com</li>
+                        <li>IDFL Turkey: turkey@idfl.com</li>
+                        <li>IDFL Pakistan: pakistan@idfl.com</li>
+                        <li>IDFL Ukraine: ukraine@idfl.com</li>
+                    </ul>
+                    <ul>
+                        <li>IDFL China: audits@idfl.com</li>
+                        <li>IDFL Taipei: tw.audits@idfl.com</li>
+                        <li>IDFL Vietnam: vn.audits@idfl.com</li>
+                        <li>IDFL India: india@idfl.com</li>
+                        <li>IDFL Bangladesh: bangladesh@idfl.com</li>
+                    </ul>
+                    <ul class="footer-right">
+                        <li>www.idfl.com</li>
+                        <li class="page-number">Page 2 of 8</li>
+                        <li>© IDFL</li>
+                    </ul>
+                </footer>
+                <!-- ========== End Footer ========= -->
+            </div>
+            <!-- ========== Page 4 ============= -->
+            <div id="page4" class="pages">
+                <!-- ========== Header ============= -->
+                <header class="form-container">
+                    <!-- ====== Heading ============ -->
+                    <div class="head row">
+                        <div class="logo col-3">
+                            <img src="/images/logo-idfl.png" alt="">
+                        </div>
+                        <div class="app-name col-6">
+                            <h1>application</h1>
+                            <span>Global Recycle Standard (GRS)</span>
+                            <span>Recycle Claim Standard (RCS)</span>
+                        </div>
+                        <div class="idfl-number col-4">
+                            <span>IDFL-FF-GRS01 V1.0 EN</span>
+                            <span>Date: Sep 2021</span>
+                        </div>
+                    </div>
+                </header>
+                <!-- ========== End Header ========= -->
+                <!-- --- SECTION 5 --- -->
+                <div class="section">
+                    <span>SECTION 5. PRODUCTS</span>
+                    <span>PHẦN 5. SẢN PHẨM</span>
+                </div>
+                <div class="section-5">
+                    <div class="info">
+                        <b>INSTRUCTIONS/ HƯỚNG DẪN:</b>
+                        <p>Using the below information, please provide information about the products you would like to
+                            certify. If your product category
+                            is not listed, please feel free to write in according to the specific product information.
+                            Please specify product details as
+                            ‘post-consumer’ and ‘pre-consumer’ respectively.
+                        </p>
+                        <p>Sử dụng thông tin dưới đây, vui lòng cung cấp thông tin về
+                            sản phẩm bạn muốn chứng nhận. Nếu danh mục sản phẩm của bạn
+                            không được liệt kê, vui lòng viết theo thông tin sản phẩm cụ thể.
+                            Vui lòng chỉ định chi tiết sản phẩm tương ứng là " sau tiêu dùng" và " trước tiêu dùng".
+                        </p>
+                        <p><u>Post-Consumer</u> – Material generated by households or by
+                            commercial, industrial, and institutional facilities in their
+                            role as end-users of the product that can no longer be used for its intended purpose. This
+                            includes returns of
+                            materials from the distribution chain.
+                        </p>
+                        <p>
+                            <u>Sau tiêu dùng</u> - Vật liệu được tạo ra bởi các hộ gia đình hoặc bởi
+                            các cơ sở thương mại, công nghiệp và đơn vị với vai trò là người dùng cuối của sản phẩm
+                            không còn được sử dụng cho mục đích đã định. Điều này bao gồm việc trả
+                            lại nguyên vật liệu từ chuỗi phân phối.
+                        </p>
+                        <p>
+                            <u>Pre-Consumer</u> - Material diverted from the waste stream during the
+                            manufacturing process. Excluded is the reutilization of materials such as rework, regrind or
+                            scrap generated in a process and capable of being reclaimed within
+                            the same process that generated it.
+                        </p>
+                        <p>
+                            <u>Trước tiêu dùng</u> - Vật liệu được chuyển hướng khỏi dòng thải
+                            trong quá trình sản xuất. LOẠI TRỪ việc sử dụng lại các vật
+                            liệu như sửa hàng, mài hàng lại hoặc phế liệu được tạo ra trong một quy trình và có khả năng
+                            được thu hồi trong cùng quy trình đã tạo ra nó.
+                        </p>
+                        <p>For more information, please see TE Materials Processes and Products Classification.</p>
+                        <p>Để biết thêm thông tin, vui lòng xem Quy trình vật liệu và Phân loại sản phẩm của TE.</p>
+                        <p class="text-red">
+                            NOTE: This information is for pre-assessment only; a product specification must be submitted
+                            later during the application process.
+                        </p>
+                        <p class="text-red">
+                            LƯU Ý: Thông tin này chỉ là đánh giá trước; đặc điểm kỹ thuật sản phẩm phải được gửi sau
+                            trong quá trình đăng ký
+                        </p>
+                        <p class="text-red">NOTE/ LƯU Ý: </p>
+                        <ul>
+                            <li class="text-red">
+                                <p class="text-red">GRS products must contain a minimum of 20% certified recycled
+                                    content. GRS Logo can only be used on products with minimum 50% certified recycled
+                                    content. </p>
+                                <p class="text-red">Các sản phẩm GRS phải chứa tối thiểu 20% hàm lượng tái chế được
+                                    chứng nhận. Biểu trưng GRS chỉ có thể được sử dụng trên các sản phẩm có hàm lượng
+                                    tái chế được chứng nhận tối thiểu 50%.</p>
+                            </li>
+                            <li class="text-red">
+                                <p>RCS products must contain a minimum of 5% certified recycled content. For products
+                                    with 5-94% certified RCS content, choose RCS (5-94%). For products with 95-100%
+                                    certified RCS content choose RCS (100%). RCS 100% must contain a minimum of 95%
+                                    certified recycled content.</p>
+                                <p>Sản phẩm RCS phải chứa tối thiểu 5% hàm lượng tái chế được chứng nhận. RCS 100% phải
+                                    chứa tối thiểu 95% hàm lượng tái chế được chứng nhận.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- <div class="row row1">
+                        <div class="col-6" style="border-right: .8px solid #626262;">
+                            <span><b>Product Categories</b> ( <i class="text-red">Choose all that apply</i> )</span>
+                            <span><b>Danh mục Sản phẩm</b> ( <i class="text-red">Chọn tất cả</i> )</span>
+                        </div>
+                        <div class="col-6">
+                            <span><b>Product Details</b> ( <i class="text-red">List all that apply</i> )</span>
+                            <span><b>Chi tiết Sản Phẩm</b> ( <i class="text-red">Liệt kê tất cả</i> )</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <div>
+                                <input type="checkbox">
+                                <span>Home Textiles / Bedding</span>
+                                <span>Dệt may Gia dụng/ Chăn Ga Gối Nệm</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-right">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <div class="line">
+                                <input type="checkbox">
+                                <span>Apparel / Hàng May Mặc</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-right">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <div class="line">
+                                <input type="checkbox">
+                                <span> Accessories / Phụ kiện</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-right">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-left" style="border-bottom: none;">
+                            <div class="line">
+                                <input type="checkbox">
+                                <span>Footwear / Giày dép</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div> -->
+                </div>
+                <!-- ========== Footer ============= -->
+                <footer class="footer">
+                    <ul>
+                        <li>IDFL Salt Lake: na.audits@idfl.com</li>
+                        <li>IDFL Europe: eu.audits@idfl.com</li>
+                        <li>IDFL Turkey: turkey@idfl.com</li>
+                        <li>IDFL Pakistan: pakistan@idfl.com</li>
+                        <li>IDFL Ukraine: ukraine@idfl.com</li>
+                    </ul>
+                    <ul>
+                        <li>IDFL China: audits@idfl.com</li>
+                        <li>IDFL Taipei: tw.audits@idfl.com</li>
+                        <li>IDFL Vietnam: vn.audits@idfl.com</li>
+                        <li>IDFL India: india@idfl.com</li>
+                        <li>IDFL Bangladesh: bangladesh@idfl.com</li>
+                    </ul>
+                    <ul class="footer-right">
+                        <li>www.idfl.com</li>
+                        <li class="page-number">Page 2 of 8</li>
+                        <li>© IDFL</li>
+                    </ul>
+                </footer>
+                <!-- ========== End Footer ========= -->
+            </div>
+            <!-- ========== Page 5 ============= -->
+            <div id="page5" class="pages">
+                <!-- ========== Header ============= -->
+                <header class="form-container">
+                    <!-- ====== Heading ============ -->
+                    <div class="head row">
+                        <div class="logo col-3">
+                            <img src="/images/logo-idfl.png" alt="">
+                        </div>
+                        <div class="app-name col-6">
+                            <h1>application</h1>
+                            <span>Global Recycle Standard (GRS)</span>
+                            <span>Recycle Claim Standard (RCS)</span>
+                        </div>
+                        <div class="idfl-number col-4">
+                            <span>IDFL-FF-GRS01 V1.0 EN</span>
+                            <span>Date: Sep 2021</span>
+                        </div>
+                    </div>
+                </header>
+                <!-- ========== End Header ========= -->
+                <div class="row heading5">
+                    <div class="col-6" style="border-right: .8px solid #626262;">
+                        <span><b>Product Categories</b><u> (</u><i>Choose all that apply</i><u>)</u></span>
+                        <span><b>Danh mục Sản phẩm</b><u> (</u><i>Chọn tất cả</i><u>)</u></span>
+                    </div>
+                    <div class="col-6">
+                        <span><b>Product Details</b><u> (</u><i>List all that apply</i><u>)</u></span>
+                        <span><b>Chi tiết Sản Phẩm</b><u> (</u><i>Liệt kê tất cả</i><u>)</u></span>
+                    </div>
+                </div>
+                <div class="page-4-section-5">
+
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <div>
+                                <input type="checkbox">
+                                <span>Home Textiles / Bedding</span>
+                                <span>Dệt may Gia dụng/ Chăn Ga Gối Nệm</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-right">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <div class="line">
+                                <input type="checkbox">
+                                <span>Apparel / Hàng May Mặc</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-right">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <div class="line">
+                                <input type="checkbox">
+                                <span> Accessories / Phụ kiện</span>
+                                <!-- <span>Dệt may Gia dụng/ Chăn Ga Gối Nệm</span> -->
+                            </div>
+                        </div>
+                        <div class="col-6 col-right">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <div class="line">
+                                <input type="checkbox">
+                                <span>Footwear / Giày dép</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-right">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <div class="line">
+                                <input type="checkbox">
+                                <span>Fabrics / Vải vóc</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-right">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <div class="line">
+                                <input type="checkbox">
+                                <span>Yarns (spun & filament) / Sợi se và filament</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-right">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <div class="line">
+                                <input type="checkbox">
+                                <span>Fibers (Bông/ Xơ)</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-right">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <div class="line">
+                                <input type="checkbox">
+                                <span>Filling / Stuffing (Vật liệu Nhồi)</span>
+                                <!-- <span>Dệt may Gia dụng/ Chăn Ga Gối Nệm</span> -->
+                            </div>
+                        </div>
+                        <div class="col-6 col-right">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <div class="line">
+                                <input type="checkbox">
+                                <span>Packaging / Đóng gói</span>
+                                <!-- <span>Dệt may Gia dụng/ Chăn Ga Gối Nệm</span> -->
+                            </div>
+                        </div>
+                        <div class="col-6 col-right">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <div class="line">
+                                <input type="checkbox">
+                                <span>Recycled Materials (Vật liệu Tái chế)</span>
+                                <!-- <span>Dệt may Gia dụng/ Chăn Ga Gối Nệm</span> -->
+                            </div>
+                        </div>
+                        <div class="col-6 col-right">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+                    <!-- --- Other -->
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <div class="line row">
+                                <input type="checkbox" class="">
+                                <span class="other-label">Other / Khác </span>
+                                <input type="text" class=" other-input" placeholder="Click here to enter text">
+                            </div>
+                        </div>
+                        <div class="col-6 col-right">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <div class="line row">
+                                <input type="checkbox" class="">
+                                <span class="other-label">Other / Khác </span>
+                                <input type="text" class=" other-input" placeholder="Click here to enter text">
+                            </div>
+                        </div>
+                        <div class="col-6 col-right">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <div class="line row">
+                                <input type="checkbox" class="">
+                                <span class="other-label">Other / Khác </span>
+                                <input type="text" class=" other-input" placeholder="Click here to enter text">
+                            </div>
+                        </div>
+                        <div class="col-6 col-right">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-left">
+                            <div class="line row">
+                                <input type="checkbox" class="">
+                                <span class="other-label">Other / Khác </span>
+                                <input type="text" class=" other-input" placeholder="Click here to enter text">
+                            </div>
+                        </div>
+                        <div class="col-6 col-right">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-left" style="border-bottom: none;">
+                            <div class="line row">
+                                <input type="checkbox" class="">
+                                <span class="other-label">Other / Khác </span>
+                                <input type="text" class=" other-input" placeholder="Click here to enter text">
+                            </div>
+                        </div>
+                        <div class="col-6 col-right" style="border-bottom: none;">
+                            <input type="text" class="input-4" placeholder="Click here to enter text">
+                        </div>
+                    </div>
+
+                </div>
+                <p class="text-alert">
+                    If additional space is needed, please use other document sheets (preferably excel or word) to submit
+                    the above information. <br>
+                    Nếu cần thêm khoảng trống, vui lòng sử dụng các trang tài liệu khác (tốt nhất là excel hoặc word) để
+                    gửi thông tin trên.
+                </p>
+
+                <!-- ========== Footer ============= -->
+                <footer class="footer">
+                    <ul>
+                        <li>IDFL Salt Lake: na.audits@idfl.com</li>
+                        <li>IDFL Europe: eu.audits@idfl.com</li>
+                        <li>IDFL Turkey: turkey@idfl.com</li>
+                        <li>IDFL Pakistan: pakistan@idfl.com</li>
+                        <li>IDFL Ukraine: ukraine@idfl.com</li>
+                    </ul>
+                    <ul>
+                        <li>IDFL China: audits@idfl.com</li>
+                        <li>IDFL Taipei: tw.audits@idfl.com</li>
+                        <li>IDFL Vietnam: vn.audits@idfl.com</li>
+                        <li>IDFL India: india@idfl.com</li>
+                        <li>IDFL Bangladesh: bangladesh@idfl.com</li>
+                    </ul>
+                    <ul class="footer-right">
+                        <li>www.idfl.com</li>
+                        <li class="page-number">Page 2 of 8</li>
+                        <li>© IDFL</li>
+                    </ul>
+                </footer>
+                <!-- ========== End Footer ========= -->
+            </div>
+
+            <!-- ========== Page 6 ============= -->
+            <div id="page6" class="pages">
+                <!-- ========== Header ============= -->
+                <header class="form-container">
+                    <!-- ====== Heading ============ -->
+                    <div class="head row">
+                        <div class="logo col-3">
+                            <img src="/images/logo-idfl.png" alt="">
+                        </div>
+                        <div class="app-name col-6">
+                            <h1>application</h1>
+                            <span>Global Recycle Standard (GRS)</span>
+                            <span>Recycle Claim Standard (RCS)</span>
+                        </div>
+                        <div class="idfl-number col-4">
+                            <span>IDFL-FF-GRS01 V1.0 EN</span>
+                            <span>Date: Sep 2021</span>
+                        </div>
+                    </div>
+                </header>
+                <!-- ========== End Header ========= -->
+                <!-- ====== INTRUCTION ========= -->
+                <!-- --- SECTION 6 --- -->
+                <div class="section-title">
+                    <span>SECTION 6. FACILITIES AND PROCESSES</span>
+                    <span>PHẦN 6. CƠ SỞ SẢN XUẤT VÀ QUY TRÌNH</span>
+                </div>
+                <div class="section-6">
+                    <div class="intruc">
+                        <h2>INSTRUCTIONS:</h2>
+                        <p>
+                            Please provide the following information for all facilities that trade / handle / process
+                            certified products in this scope of certification. This includes the applicant information
+                            and may include other facilities’ information such as offices, distribution centers, and/or
+                            suppliers that will be included in the same scope of certification.
+                        </p>
+                        <p>
+                            Vui lòng cung cấp thông tin sau cho tất cả các cơ sở giao dịch / xử lý / gia công các sản
+                            phẩm được chứng nhận trong phạm vi chứng nhận này. Điều này bao gồm thông tin bên đăng ký và
+                            có thể bao gồm thông tin của các cơ sở khác như văn phòng, trung tâm phân phối và / hoặc nhà
+                            cung cấp sẽ được bao gồm trong cùng phạm vi chứng nhận.
+                        </p>
+                        <ul>
+                            <li><b>Number of Employees:</b> Please include all permanent, contracted, and sub-contracted
+                                employees. <br>
+                                <b>Số lượng Nhân viên:</b> Vui lòng cung cấp nhân viên cố định, hợp đồng và các nhân
+                                viên của nhà thầu phụ
+                            </li>
+                            <li>
+                                <b>List of Activities / Processes:</b> Examples - Ginning, Spinning, Dyeing, Processing,
+                                Weaving, Knitting, Laundering, Finishing, Manufacturing, Printing, Trading (buy and
+                                sell, no processing), Storing, Importing, Exporting, Administration, Subcontractor, etc.
+                                <br>
+                                <b>Danh sách các Hoạt động / Quy trình:</b> Ví dụ - Đánh bông, Kéo sợi, Nhuộm, Xử lý,
+                                Dệt, Đan, Giặt, Hoàn thiện, Sản xuất, In ấn, Giao dịch (mua và bán, không xử lý), Lưu
+                                trữ, Nhập khẩu, Xuất khẩu, Quản lý, Thầu phụ, v.v.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <div class="col-10">
+                            <p class=" text-alert">
+                                <b>REQUIRED:</b> Are there any subcontractor facilities that trade / handle / process
+                                certified products in this scope of certification? If so, please indicate by noting in
+                                the List of Activities / Processes.
+                            </p>
+                            <p class=" text-alert">
+                                <b>YÊU CẦU:</b> Có bất kỳ cơ sở nhà thầu phụ nào kinh doanh / xử lý / gia công các sản
+                                phẩm được chứng nhận trong phạm vi chứng nhận này không? Nếu có, vui lòng cho biết bằng
+                                cách ghi chú trong Danh sách Hoạt động / Quy trình.
+                            </p>
+                        </div>
+                        <div class="col-2">
+                            <div>
+                                <input type="checkbox">
+                                <label>YES / CÓ</label>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                                <label>NO / KHÔNG</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-6-heading">
+                        <div class="row">
+                            <div class="col-3">
+                                <span class="col-certificate">
+                                    Facility/Unit Name <br>
+                                    Tên cơ sở / Đơn vị
+                                </span>
+                            </div>
+                            <div class="col-3">
+                                <span class="col-certificate">
+                                    Facility/Unit Address
+                                    (Street, City, Region, zip code, Country) <br>
+                                    Địa chỉ Cơ sở / Đơn vị
+                                    (Đường, Thành phố, Khu vực, mã zip, Quốc gia)
+                                </span>
+                            </div>
+                            <div class="col-1">
+                                <span class="col-certificate">
+                                    Number of Employees <br>
+                                    Số lượng Nhân viên
+                                </span>
+                            </div>
+                            <div class="col-3">
+                                <span class="col-certificate">
+                                    List of Activities / Processes <br>
+                                    Danh sách các Hoạt động / Quy trình
+                                </span>
+                            </div>
+                            <div class="col-2">
+                                <span class="col-certificate">
+                                    Certified Previously (Y/N) <br>
+                                    Đã Chứng nhận Trước đây (CÓ/KHÔNG)
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-6-datainput">
+                        <div class="row">
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-1"><input type="text" placeholder="Number"></textarea></div>
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-2">
+                                <select name="" id="">
+                                    <option value="">Choose an item.</option>
+                                    <option value="YES">YES</option>
+                                    <option value="NO">NO</option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-1"><input type="text" placeholder="Number"></textarea></div>
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-2">
+                                <select name="" id="">
+                                    <option value="">Choose an item.</option>
+                                    <option value="YES">YES</option>
+                                    <option value="NO">NO</option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-1"><input type="text" placeholder="Number"></textarea></div>
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-2">
+                                <select name="" id="">
+                                    <option value="">Choose an item.</option>
+                                    <option value="YES">YES</option>
+                                    <option value="NO">NO</option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-1"><input type="text" placeholder="Number"></textarea></div>
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-2">
+                                <select name="" id="">
+                                    <option value="">Choose an item.</option>
+                                    <option value="YES">YES</option>
+                                    <option value="NO">NO</option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-1"><input type="text" placeholder="Number"></textarea></div>
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-2">
+                                <select name="" id="">
+                                    <option value="">Choose an item.</option>
+                                    <option value="YES">YES</option>
+                                    <option value="NO">NO</option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-1"><input type="text" placeholder="Number"></textarea></div>
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-2">
+                                <select name="" id="">
+                                    <option value="">Choose an item.</option>
+                                    <option value="YES">YES</option>
+                                    <option value="NO">NO</option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-1"><input type="text" placeholder="Number"></textarea></div>
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-2">
+                                <select name="" id="">
+                                    <option value="">Choose an item.</option>
+                                    <option value="YES">YES</option>
+                                    <option value="NO">NO</option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row" style="border-bottom: none;">
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."
+                                    style="border-bottom-left-radius: 10px;"></textarea></div>
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-1"><input type="text" placeholder="Number"></textarea></div>
+                            <div class="col-3"><textarea name="" id="" cols="38" rows="5"
+                                    placeholder="Click here to enter text."></textarea></div>
+                            <div class="col-2">
+                                <select name="" id="">
+                                    <option value="">Choose an item.</option>
+                                    <option value="YES">YES</option>
+                                    <option value="NO">NO</option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-alert">
+                    If additional space is needed, please use other document sheets (preferably excel or word) to submit
+                    the above information. <br>
+                    Nếu cần thêm khoảng trống, vui lòng sử dụng các trang tài liệu khác (tốt nhất là excel hoặc word) để
+                    gửi thông tin trên.
+                </p>
+                <!-- ========== Footer ============= -->
+                <footer class="footer">
+                    <ul>
+                        <li>IDFL Salt Lake: na.audits@idfl.com</li>
+                        <li>IDFL Europe: eu.audits@idfl.com</li>
+                        <li>IDFL Turkey: turkey@idfl.com</li>
+                        <li>IDFL Pakistan: pakistan@idfl.com</li>
+                        <li>IDFL Ukraine: ukraine@idfl.com</li>
+                    </ul>
+                    <ul>
+                        <li>IDFL China: audits@idfl.com</li>
+                        <li>IDFL Taipei: tw.audits@idfl.com</li>
+                        <li>IDFL Vietnam: vn.audits@idfl.com</li>
+                        <li>IDFL India: india@idfl.com</li>
+                        <li>IDFL Bangladesh: bangladesh@idfl.com</li>
+                    </ul>
+                    <ul class="footer-right">
+                        <li>www.idfl.com</li>
+                        <li class="page-number">Page 2 of 8</li>
+                        <li>© IDFL</li>
+                    </ul>
+                </footer>
+                <!-- ========== End Footer ========= -->
+            </div>
+            <!-- ========== Page 7 ============= -->
+            <div id="page7" class="pages">
+                <!-- ========== Header ============= -->
+                <header class="form-container">
+                    <!-- ====== Heading ============ -->
+                    <div class="head row">
+                        <div class="logo col-3">
+                            <img src="/images/logo-idfl.png" alt="">
+                        </div>
+                        <div class="app-name col-6">
+                            <h1>application</h1>
+                            <span>Global Recycle Standard (GRS)</span>
+                            <span>Recycle Claim Standard (RCS)</span>
+                        </div>
+                        <div class="idfl-number col-4">
+                            <span>IDFL-FF-GRS01 V1.0 EN</span>
+                            <span>Date: Sep 2021</span>
+                        </div>
+                    </div>
+                </header>
+                <!-- ========== End Header ========= -->
+                <div class="section-title">
+                    <span>SECTION 7. CERTIFICATION INFORMATION</span>
+                    <span>PHẦN 7. THÔNG TIN CHỨNG NHẬN</span>
+                </div>
+                <div class="section-page-7">
+                    <div class="section7">
+                        <div class="notes">
+                            <p class="">
+                                Certifications - Is the organization or facilities certified to any of the following
+                                standards? <br>
+                                Chứng nhận - Tổ chức hoặc cơ sở từng chứng nhận bất kỳ tiêu chuẩn nào sau đây không?
+                            </p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-10">
+                                <p>
+                                    OEKO-TEX STEP Environmental Performance Requirements <br>
+                                    Yêu cầu về Hiệu suất Môi trường của Oeko -Tex SteP
+                                </p>
+                            </div>
+                            <div class="col-2">
+                                <div>
+                                    <input type="checkbox"><span>YES</span>
+                                    <input type="checkbox"><span>NO</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10">
+                                <p>
+                                    Global Organic Textile Standard (GOTS) <br>
+                                    Tiêu chuẩn Dệt May Hữu Cơ Toàn Cầu (GOTS)
+                                </p>
+                            </div>
+                            <div class="col-2">
+                                <div>
+                                    <input type="checkbox"> <span>YES</span><input type="checkbox"> <span>NO</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10">
+                                <p>
+                                    SCS Recycled Content Verification <br>
+                                    Xác minh Thành phần Tái chế SCS
+                                </p>
+                            </div>
+                            <div class="col-2">
+                                <div>
+                                    <input type="checkbox"> <span>YES</span><input type="checkbox"> <span>NO</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10">
+                                <p>
+                                    BSCI Social Audit <br>
+                                    Đánh giá Xã hội BSCI
+                                </p>
+                            </div>
+                            <div class="col-2">
+                                <div>
+                                    <input type="checkbox"> <span>YES</span><input type="checkbox"> <span>NO</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10">
+                                <p>
+                                    SA 8000 Audit <br>
+                                    Đánh giá SA 8000
+                                </p>
+                            </div>
+                            <div class="col-2">
+                                <div>
+                                    <input type="checkbox"> <span>YES</span><input type="checkbox"> <span>NO</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10">
+                                <p>
+                                    Worldwide Responsible Accreditation Program (WRAP) <br>
+                                    Chương trình Chứng nhận có Trách nhiệm Trên Toàn Thế giới (WRAP)
+                                </p>
+                            </div>
+                            <div class="col-2">
+                                <div>
+                                    <input type="checkbox"> <span>YES</span><input type="checkbox"> <span>NO</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10">
+                                <p>
+                                    Higgs Facilities Environmental Module (FEM) <br>
+                                    Higg Index Modul về Môi trường (FEM)
+                                </p>
+                            </div>
+                            <div class="col-2">
+                                <div>
+                                    <input type="checkbox"> <span>YES</span><input type="checkbox"> <span>NO</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10">
+                                <p>
+                                    Higgs Facilities Social Labor Module (FSLM) <br>
+                                    Higg Index Modul về Lao động & Xã hội (FSLM)
+                                </p>
+                            </div>
+                            <div class="col-2">
+                                <div>
+                                    <input type="checkbox"> <span>YES</span><input type="checkbox"> <span>NO</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10">
+                                <p>
+                                    Higgs Brand Retail Module (BRM) <br>
+                                    Higg Index Modul về Thương hiệu bán lẻ (BRM)
+                                </p>
+                            </div>
+                            <div class="col-2">
+                                <div>
+                                    <input type="checkbox"> <span>YES</span><input type="checkbox"> <span>NO</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10">
+                                <p>
+                                    Any standard approved against the GSCP environmental reference requirement audit?
+                                    <br>
+                                    Bất kỳ tiêu chuẩn nào được chấp thuận dựa trên đánh giá yêu cầu tham chiếu môi
+                                    trường GSCP?
+                                </p>
+                            </div>
+                            <div class="col-2">
+                                <div>
+                                    <input type="checkbox"> <span>YES</span><input type="checkbox"> <span>NO</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10">
+                                <p>
+                                    Any standard approved against the GSCP social reference code audit? <br>
+                                    Bất kỳ tiêu chuẩn nào được chấp thuận chống lại việc kiểm tra mã tham chiếu xã hội
+                                    GSCP?
+                                </p>
+                            </div>
+                            <div class="col-2">
+                                <div>
+                                    <input type="checkbox"> <span>YES</span><input type="checkbox"> <span>NO</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="notes">
+                            <p class="">Chemical Compliance <br> Tuân thủ về Hóa chất</p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-10">
+                                <p>
+                                    Do any facilities use chemical inputs in the production of GRS products? <br>
+                                    Cơ sở sản xuất có sử dụng hóa chất đầu vào trong sản xuất hàng hóa GRS?
+                                </p>
+                            </div>
+                            <div class="col-2">
+                                <div>
+                                    <input type="checkbox"> <span>YES</span><input type="checkbox"> <span>NO</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10">
+                                <p>
+                                    How many chemicals are used in the production of GRS products? <br>
+                                    Có bao nhiêu hóa chất được sử dụng trong sản xuất hàng hóa GRS?
+                                </p>
+                            </div>
+                            <div class="col-2">
+                                <div>
+                                    <input type="checkbox"> <span>YES</span><input type="checkbox"> <span>NO</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="notes">
+                            <p class="">Certification Compliance <br> Tuân thủ về Chứng nhận</p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-10">
+                                <p>
+                                    Has the organization or any of its facilities been denied certification by another
+                                    Certification Body? If yes, please provide detailed information below. <br>
+                                    Tổ chức hoặc bất kỳ cơ sở sản xuất của tổ chức bị từ chối chứng nhận bởi một Tố chức
+                                    Chứng nhận khác không? Nếu có, vui lòng cung cấp thông tin chi tiết tại dưới đây.
+                                </p>
+                            </div>
+                            <div class="col-2">
+                                <div>
+                                    <input type="checkbox"> <span>YES</span><input type="checkbox"> <span>NO</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div> -->
+                        <div class="note-text">
+                            <input type="text" class="ip-text" placeholder="Click to enter text.">
+                        </div>
+                        <!-- </div> -->
+                        <div class="row">
+                            <div class="col-10">
+                                <p>
+                                    Has the organization or any of its facilities been banned from product
+                                    certification? If yes, please explain below. <br>
+                                    Tổ chức hoặc bất kỳ cơ sở sản xuất của tổ chức bị cấm chứng nhận sản phẩm không? Nếu
+                                    có, vui lòng giải thích tại dưới đây.
+                                </p>
+                            </div>
+                            <div class="col-2">
+                                <div>
+                                    <input type="checkbox"> <span>YES</span><input type="checkbox"> <span>NO</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="note-text" style="border-bottom: none;">
+                                <input type="text" class="ip-text" placeholder="Click to enter text.">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ========== Footer ============= -->
+                <footer class="footer">
+                    <ul>
+                        <li>IDFL Salt Lake: na.audits@idfl.com</li>
+                        <li>IDFL Europe: eu.audits@idfl.com</li>
+                        <li>IDFL Turkey: turkey@idfl.com</li>
+                        <li>IDFL Pakistan: pakistan@idfl.com</li>
+                        <li>IDFL Ukraine: ukraine@idfl.com</li>
+                    </ul>
+                    <ul>
+                        <li>IDFL China: audits@idfl.com</li>
+                        <li>IDFL Taipei: tw.audits@idfl.com</li>
+                        <li>IDFL Vietnam: vn.audits@idfl.com</li>
+                        <li>IDFL India: india@idfl.com</li>
+                        <li>IDFL Bangladesh: bangladesh@idfl.com</li>
+                    </ul>
+                    <ul class="footer-right">
+                        <li>www.idfl.com</li>
+                        <li class="page-number">Page 2 of 8</li>
+                        <li>© IDFL</li>
+                    </ul>
+                </footer>
+                <!-- ========== End Footer ========= -->
+            </div>
+            <!-- ========== Page 8 ============= -->
+            <div id="page8" class="pages">
+                <!-- ========== Header ============= -->
+                <header class="form-container">
+                    <!-- ====== Heading ============ -->
+                    <div class="head row">
+                        <div class="logo col-3">
+                            <img src="/images/logo-idfl.png" alt="">
+                        </div>
+                        <div class="app-name col-6">
+                            <h1>application</h1>
+                            <span>Global Recycle Standard (GRS)</span>
+                            <span>Recycle Claim Standard (RCS)</span>
+                        </div>
+                        <div class="idfl-number col-4">
+                            <span>IDFL-FF-GRS01 V1.0 EN</span>
+                            <span>Date: Sep 2021</span>
+                        </div>
+                    </div>
+                </header>
+                <!-- ========== End Header ========= -->
+                <div class="section7-part2">
+                    <div class="part2-notes">
+                        <p>
+                            Undersigned confirms that all information in the application form is completely truthful.
+                            Knowingly making a false statement on this application may lead to the termination of the
+                            certification. <br>
+                            Ký tên xác nhận rằng tất cả các thông tin trong đơn là hoàn toàn trung thực. Cố ý khai báo
+                            sai trên ứng dụng này có thể dẫn đến việc chấm dứt chứng nhận.
+                        </p>
+                    </div>
+                    <div class="heading">
+                        <div class="row title">
+                            <div class="col-5">
+                                <span>Name of Company <br> Tên Công ty:</span>
+                            </div>
+                            <div class="col-7">
+                                <span>
+                                    Company’s Registered Seal/Stamp: <br>
+                                    Con dấu đã Đăng ký của Công ty:
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                <input type="text" class="text-ip" placeholder="Click to enter text.">
+                            </div>
+                            <!-- <div class="col-7"><input type="text" class="text-ip"></div> -->
+                        </div>
+                        <div class="row author-title">
+                            <p>Authorized Signature / Chữ ký Ủy quyền: </p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-5">
+                                <span>
+                                    Name and Title of the Signatory: <br>
+                                    Tên và Chức vụ của Người Ký tên:
+                                </span>
+                            </div>
+                            <div class="col-7">
+                                <input type="text" class="" placeholder="Click to enter text.">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5 date-label">
+                                <span>Date / Ngày:</span>
+                            </div>
+                            <div class="col-7">
+                                <input type="date" class="" placeholder="Click to enter text.">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p>
+                                * If another company is helping with the application, please provide the following
+                                information: <br>
+                                * Nếu một công ty khác đang hỗ trợ bên yêu cầu, vui lòng cung cấp thông tin sau:
+                            </p>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                <span>
+                                    Application Representative Company: <br>
+                                    Công ty Đại diện Bên Yêu cầu:
+                                </span>
+                            </div>
+                            <div class="col-7">
+                                <input type="text" class="" placeholder="Click to enter text.">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                <span>
+                                    Application Representative Contact Name: <br>
+                                    Tên Người Đại diện Liên hệ Bên Yêu cầu:
+                                </span>
+                            </div>
+                            <div class="col-7">
+                                <input type="text" class="" placeholder="Click to enter text.">
+                            </div>
+                        </div>
+                        <div class="row" style="border-bottom: none;">
+                            <div class="col-5">
+                                <span>
+                                    Application Representative Contact Email: <br>
+                                    Email Liên hệ Đại diện Bên yêu cầu:
+                                </span>
+                            </div>
+                            <div class="col-7">
+                                <input type="text" class="" placeholder="Click to enter text.">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ========== Footer ============= -->
+                <footer class="footer">
+                    <ul>
+                        <li>IDFL Salt Lake: na.audits@idfl.com</li>
+                        <li>IDFL Europe: eu.audits@idfl.com</li>
+                        <li>IDFL Turkey: turkey@idfl.com</li>
+                        <li>IDFL Pakistan: pakistan@idfl.com</li>
+                        <li>IDFL Ukraine: ukraine@idfl.com</li>
+                    </ul>
+                    <ul>
+                        <li>IDFL China: audits@idfl.com</li>
+                        <li>IDFL Taipei: tw.audits@idfl.com</li>
+                        <li>IDFL Vietnam: vn.audits@idfl.com</li>
+                        <li>IDFL India: india@idfl.com</li>
+                        <li>IDFL Bangladesh: bangladesh@idfl.com</li>
+                    </ul>
+                    <ul class="footer-right">
+                        <li>www.idfl.com</li>
+                        <li class="page-number">Page 2 of 8</li>
+                        <li>© IDFL</li>
+                    </ul>
+                </footer>
+                <!-- ========== End Footer ========= -->
+            </div>
+            <!-- <button id="submit-btn" type="submit">Submit</button> -->
+            <!-- <a href="#">Submit</a> -->
+        </form>
+    </div>
+    <!-- ====== Pagination ========= -->
+    <div id="pagination" class="pagination">
+        <span><a class="page_num" href="#page1">1</a></span>
+        <span><a class="page_num" href="#page2">2</a></span>
+        <span><a class="page_num" href="#page3">3</a></span>
+        <span><a class="page_num" href="#page4">4</a></span>
+        <span><a class="page_num" href="#page5">5</a></span>
+        <span><a class="page_num" href="#page6">6</a></span>
+        <span><a class="page_num" href="#page7">7</a></span>
+        <span><a class="page_num" href="#page8">8</a></span>
+    </div>
+    <!-- ====== End Pagination ===== -->
+    <!-- ====== Footer======= -->
+    <div id="footer">
+        <span id="copy">&copy; IDFL Vietnam</span>
+    </div>
+
+    <!-- ========== JS ============= -->
+</body>
+
+</html>
