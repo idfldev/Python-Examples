@@ -1,0 +1,27 @@
+<!-- ====== Header ======= -->
+  <div id="header">
+      <nav>
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <a href="{% url 'dashboard' %}" style="text-decoration:none;"><h2>IDFL Việt Nam</h2></a>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li><a href="{% url 'cs' %}">CS</a></li>
+                <li><a href="{% url 'auditor' %}">Auditor</a></li>
+                <li><a href="{% url 'inspector' %}">Inspector</a></li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <div id="account">
+                  <i class="fa fa-user"></i>
+                <a href="{% url 'logout-page' %}" style="color:red;">Logout</a>
+                <span>{{ request.user }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+<!-- ========== End Header ========= -->

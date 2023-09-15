@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authorized</title>
+</head>
+<style>
+    .alert-login {
+        background-color: #0463b2;
+        width: 60%;
+        height: 200px;
+        margin: 50px auto;
+        border-radius: 20px;
+        box-shadow: 0px 2px 10px rgba(4, 11, 99, 0.6);
+        color: white;
+    }
+
+    .alert-login p {
+        font-size: 20px;
+        height: 40px;
+        line-height: 40px;
+        font-weight: 600;
+        margin-top: 50px;
+        color: #0463b2;
+        background-color: rgb(250, 252, 252);
+        text-align: center;
+    }
+
+    .alert-login span {
+        display: block;
+        font-size: 15px;
+        height: 40px;
+        line-height: 40px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .alert-login span b {
+        font-weight: 200;
+    }
+
+    .alert-login a {
+        background-color: aliceblue;
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+        color: #0463b2;
+        background-color: rgb(250, 252, 252);
+        text-align: center;
+        text-decoration: none;
+        padding: 5px;
+        border-radius: 5px;
+        transition: .5s;
+    }
+
+    .alert-login a:hover {
+        color: rgb(250, 252, 252);
+        background-color: #0463b2;
+        border: .5px solid rgb(250, 252, 252);
+
+    }
+
+    #copy {
+        display: block;
+        height: 40px;
+        width: 100%;
+        background-color: #0463b2;;
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        margin-top: 10px;
+        color: white;
+        text-align: center;
+        line-height: 40px;
+    }
+</style>
+
+<body>
+    <!-- ====== Arlert ======= -->
+    <div class="alert-login">
+        <p>You are not logged in</p>
+        <span>Only for IDFL Vietnam staff access</span>
+        <span>If you have any questions, please reach out to
+            <b>vietnam@idfl.com</b>
+        </span>
+        <a href="{% url 'home' %}">Back To Home Page</a>
+    </div>
+
+    <!-- ====== Footer ======= -->
+    <div id="footer">
+        <span id="copy">&copy; IDFL Vietnam</span>
+    </div>
+
+</body>
+
+</html>

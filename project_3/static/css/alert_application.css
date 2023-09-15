@@ -1,0 +1,166 @@
+@import "./libs.css";
+.alter-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(6, 2, 6, 0.6);
+  box-sizing: border-box;
+  display: block;
+  height: 1809px;
+  width: 100%;
+  transition: .5s;
+}
+.alter-container .alert-box {
+  background-color: var(--blue-3);
+  width: 40%;
+  min-height: 420px;
+  border-radius: 10px;
+  box-shadow: 2px 7px 12px rgba(27, 10, 223, 0.311);
+  padding: 20px;
+  color: white;
+  margin: 10% auto;
+  transition: .5s;
+}
+/* ----------------- */
+.close-alert {
+  visibility: hidden;
+  transition: .5s;
+
+}
+/* ----------------- */
+.alert-box span {
+  cursor: pointer;
+  display: block;
+  text-align: right;
+}
+
+.alert-box span .closebtn {
+  text-decoration: none;
+  font-family: "Gill Sans", sans-serif;
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 5px;
+  height: 10px;
+  width: 10px;
+  line-height: 8px;
+  font-size: 1.3em;
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+}
+.alert-box span .closebtn:hover {
+  color: tomato;
+  border: 1px solid tomato;
+}
+.close {
+  cursor: pointer;
+}
+.alert-box h2,
+h3 {
+  text-align: center;
+  margin: 30px 0;
+}
+.alert-box ul {
+  margin: 10px 0 5px 30px;
+}
+.alert-box ul li {
+  margin: 10px 0;
+}
+
+/* ------------- contact box -------------------- */
+.alert-box .contact-box {
+  background-color: white;
+  border-radius: 10px;
+  border: .8px solid var(--blue-5);
+  box-shadow: 1px -1px 2px rgba(6, 2, 6, 0.5);
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px;
+  transition: .5s;
+}
+.contact-box .brand-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto 30px auto;
+}
+.brand-row h4 {
+  color: var(--blue-4);
+  text-transform: uppercase;
+  margin: 0 10px;
+  font-size: 14px;
+}
+.brand-row .logo-contact {
+  width: 10%;
+  z-index: 1;
+  background-color: white;
+  border-radius: 50%;
+}
+.audit-block {
+    z-index: 1;
+}
+.contact-box .qrcode-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto 30px auto;
+}
+.qrcode-row .qr-block {
+  width: 50%;
+  margin: 0 10px;
+  text-align: center;
+}
+.qrcode-row .qrcode {
+  width: 35%;
+  height: 30%;
+  margin: 0 15px;
+  border-radius: 5px;
+}
+
+.contact-box .contact-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px auto;
+  text-align: center;
+}
+.contact-row .icon {
+  color: var(--blue-4);
+  font-weight: bold;
+  background-color: white;
+  margin: 0 5px;
+  display: block;
+  text-align: center;
+  border: 2px solid var(--blue-4);
+  border-radius: 50%;
+  padding: 5px;
+}
+.contact-row a {
+  color: var(--blue-4);
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.5s;
+  display: block;
+  width: 45%;
+}
+.contact-row a:hover {
+  text-decoration: underline;
+}
+
+.alert-box .right-box {
+    background-color: var(--blue-4);
+    box-shadow: 2px 7px 12px rgba(6, 2, 6, 0.5);
+    width: 16.8%;
+    height: 325px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0px auto;
+    position: absolute;
+    right: 33.2%;
+    z-index: 0;
+  }
+/* =========================== */

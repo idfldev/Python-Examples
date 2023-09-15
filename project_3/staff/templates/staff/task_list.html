@@ -1,0 +1,35 @@
+{% extends 'Layout/base_dashboard.html' %} 
+
+{% block title %} Task List {% endblock %} 
+
+{% block content %}
+    <div class="top-block">
+        <h1>Tasks List Page</h1>
+      {% if  request.user.is_authenticated %}
+        <p>{{ request.user }}</P>
+          <!-- <a href="{% url 'logout' %}">Logout</a> -->
+      {% else %}
+        <a href="{% url 'login' %}">Login</a>
+      {% endif %}
+
+    </div>
+    <a href="{% url 'task-create' %}">Add Task</a>
+    <a href="{% url 'task-create' %}">Add New User</a>
+    <table>
+        <tr>
+          <th>Item</th>
+          <th></th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+          <td>{{ task.title }}</td>
+          <td><a href="{% url 'task-detail' task.id %}">View</a></td>
+          <td><a href="{% url 'task-update' task.id %}">Edit</a></td>
+          <td><a href="{% url 'task-delete' task.id %}">Delete</a></td>
+        </tr>
+        {% empty %}
+        <h3>No items in list</h3>
+        {% endfor %}
+      </table>
+
+{% endblock %}

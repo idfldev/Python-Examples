@@ -1,0 +1,12 @@
+{% extends 'Layout/base_dashboard.html' %} 
+
+{% block title %} Task List {% endblock %} 
+
+{% block content %}
+    <div class="top-block">
+        <h1>Tasks Detail: {{ task }}</h1>
+        <a href="{% url 'tasks' %}">Back</a>
+    </div>
+
+
+{% endblock %}

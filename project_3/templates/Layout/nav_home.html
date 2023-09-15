@@ -1,0 +1,42 @@
+{% load static %}
+<!-- ====== Header ======= -->
+<div id="header">
+    <nav>
+        <div class="brand-block">
+            <a href="{% url 'home' %}">
+                <img id="logo-home" src="{% static 'images/idfl-icon.png' %}" alt="">
+            </a>
+            <a href="{% url 'home' %}" style="text-decoration:none;">
+                <h2>IDFL Vietnam</h2>
+            </a>
+        </div>
+        <div class="nav-list">
+            <div class="search-nav">
+                <b id="contact-us" onclick="openPopup()" style="
+                margin-right: 100px;
+                width: 30%;
+                margin-top: 3px;
+                font-size: 20px;
+                color: white;
+                cursor: pointer;
+            ">Contact Us</b>
+                <div class="search-btn" onclick="myFunction()">
+                    <a href="">Search</a>
+                </div>
+                <!-- <input class="search-btn" type="button" value="Search"> -->
+                <input id="search-url" class="search-ip" type="text" placeholder="Enter Application Form ID Here">
+            </div>
+        </div>
+        <div class="account">
+            <a href="{% url 'login-page' %}"><i class="fa fa-user"></i></a>
+        </div>
+    </nav>
+</div>
+
+<script>
+    function myFunction() {
+        const search_url = document.getElementById('search-url').value;
+        console.log(search_url)
+        location.href = "{% url 'grs-rcs' %}";
+    }
+</script>

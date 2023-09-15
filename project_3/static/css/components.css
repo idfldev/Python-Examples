@@ -1,0 +1,111 @@
+/* Import css */
+@import "./libs.css";
+#wrap-container {
+  margin: 100px auto;
+}
+.idfl-card {
+  border: 0.7px solid var(--light-2);
+  margin: 30px auto 5px auto;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px #626262;
+  padding: 10px 30px;
+}
+#header {
+  border-bottom: 0.5px solid var(--blue-2);
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: var(--blue-4);
+  margin: 0;
+  padding: 0;
+}
+#header img {
+  width: 20px;
+  height: 20px;
+}
+#header h2 {
+  margin-left: 30px;
+  color: white;
+}
+#header ul {
+  list-style: none;
+  display: flex;
+}
+#header ul li {
+  margin: 10px;
+}
+#header ul li a {
+  text-decoration: none;
+  color: white;
+}
+#header ul li a:hover {
+  color: rgba(238, 231, 231, 0.772);
+}
+#submit-btn {
+  position: fixed;
+  bottom: 50px;
+  left: 80px;
+  border: none;
+  background-color: var(--blue-5);
+  color: white;
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+}
+#submit-btn:hover {
+  color: rgba(238, 231, 231, 0.772);
+}
+#copy {
+  display: block;
+  height: 40px;
+  width: 100%;
+  background-color: var(--blue-5);
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  margin-top: 10px;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+}
+.text-alert {
+  font-size: 17px;
+  color: red;
+  margin: 10px;
+}
+#page1, #page2, #page3, #page4, #page5, #page6, #page7, #page8 
+{
+  transition: .5s;
+}
+
+
+/* ========================== */
+/* 
+https://docs.google.com/forms/u/0/d/e/1FAIpQLSenN7xSwEeJyVV3jTbtQ2PiLLXQkba4EpebExe3tpm9h0pWyw/formResponse
+
+Company Name                entry.1065687306
+Company Name (English):     entry.1396075535 
+Address                     entry.907990680
+City                        entry.1004111957
+Country                     entry.268821435
+Contact Person              entry.273063647
+Title                       entry.1181259738                  
+Phone No.                   entry.1150884750
+Email:                      entry.656863114
+*/
+/* 
+Payment Currency            entry.110817852 hud 
+enter currency              entry.1368675126
+Tax ID #                    entry.241461181   
+PAYER COMPANY INFORMATION   entry.1675246759    
+Company Name                entry.2080991334
+Company Name (English)      entry.1765652577    
+Address/ Địa chỉ:           entry.695465787
+City                        entry.739007334
+Country                     entry.2111624360
+Contact Person              entry.1487195202     
+Title                       entry.1420220815     
+Phone No.                   entry.731402059    
+Email:                      entry.1931048314      
+*/

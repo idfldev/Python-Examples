@@ -1,0 +1,143 @@
+@import "./libs.css";
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* =========== Header =================== */
+#header {
+    background-color: #0463b2;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+nav {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+nav .brand-block {
+    width: 30%;
+    display: flex;
+    padding: 5px 0;
+    height: 60px;
+    align-items: center;
+}
+
+.brand-block img {
+    width: 50px;
+    height: 50px;
+}
+
+.brand-block h2 {
+    color: white;
+    font-size: 20px;
+    line-height: 50px;
+    margin-left: 10px;
+}
+
+nav .nav-list {
+    width: 45%;
+    padding: 5px 0;
+    align-items: center;
+}
+
+.nav-list ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav-list ul li {
+    margin: 0 10px;
+}
+
+.nav-list ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-list ul li a:hover {
+    color: rgba(238, 231, 231, 0.772);
+}
+/* ==================== */
+.nav-list .search-nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+.search-nav b#contact-us {
+    margin-right: 100px;
+    width: 30%;
+    margin-top: 3px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-list .search-nav .search-btn {
+    width: 20%;
+    height: 30px;
+    line-height: 29px;
+    background-color: #0c74c9;
+    border: none;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    color: white;
+    font-size: large;
+    transition: 0.5s;
+}
+.nav-list .search-nav .search-btn:hover {
+    background-color: #0b86ea;
+    cursor: pointer;
+    height: 30.5px;
+}
+.nav-list .search-nav .search-btn a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+}
+.nav-list .search-nav .search-ip {
+    height: 30px;
+    width: 50%;
+    outline: none;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border: none;
+    padding: 2px 5px;
+}
+.nav-list .search-nav .search-ip:focus {
+    background-color: rgba(230, 229, 227, 0.931);
+}
+/* ======================== */
+nav .account {
+    width: 5%;
+    align-items: center;
+}
+
+nav .account .fa-user {
+    font-size: 30px;
+    color: white;
+}
+
+/* ======= Footer ===================== */
+#footer {
+    background-color: #0463b2;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    height: 40px;
+}
+
+#footer #copy {
+    line-height: 40px;
+    color: aliceblue;
+}

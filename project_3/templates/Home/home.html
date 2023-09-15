@@ -1,0 +1,994 @@
+{% extends 'Layout/base_home.html' %}
+
+{% load static %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+
+<!-- ========= Global Recycled Standard ============== -->
+<div id="grs-Sidebar" class="sidebar">
+    <div class="side-img">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav_GRS()">×</a>
+        <a href="#"><img src="{% static 'images/brand-logo/grs-logo.png' %}" alt="Global Recycled Standard"
+                class="logo-image-grs"></a>
+        <a class="brand-name" href="#">Global Recycled Standard (GRS)</a>
+        <div class="apply-block">
+            <!-- <a href="javascript:void(0)" class="apply-btn" onclick="openPopup()">Apply Now</a> -->
+            <a href="{% url 'grs-rcs' %}" class="apply-btn">Apply Now</a>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3>Aims</h3>
+        <p>The aim of the Global Recycled Standard (GRS) is to increase the use of recycled materials.</p>
+        <p>
+            The Standard has six objectives: (1) aligning definitions
+            of "recycled" across multiple applications, (2) tracking and
+            tracing recycled input materials, (3) providing customers with
+            a tool to make informed decisions, (4) reducing the harmful impact
+            of production on people and the environment, (5) providing assurance
+            that materials in a final product are recycled and processed
+            sustainably and (6) driving innovation in addressing quality issues
+            related to the use of recycled materials.
+        </p>
+        <h3>Scope</h3>
+        <p>
+            Applicants may choose the types of recycled materials they want to
+            have audited. Common recycled materials include down and feathers, PET, filament, yarn/thread and
+            fabric. Applicant companies, such as brands and manufacturers, may select the final products they would
+            like to have audited.
+            A complete list of products and product categories can be found
+            <a style="font-size: 12px; display: inline;padding: 0;"
+                href="https://idfl.com/textile-exchange-te-mapping-product-categories-and-product-details/"
+                target="_self">here</a>.
+        </p>
+        <h3>Requirements</h3>
+        <span>The selected materials and products will be evaluated based upon requirements in the following
+            areas:</span>
+        <ul>
+            <li>Recycling</li>
+            <li>Supply Chain</li>
+            <li>Social</li>
+            <li>Environmental</li>
+            <li>Chemical</li>
+        </ul>
+    </div>
+
+    <div class="block-process">
+        <h2>Audit & Certification Process</h2>
+        <img src="{% static '/images/audit-process.png' %}" alt="" class="img-process">
+    </div>
+    <div class="block-bottom"></div>
+</div>
+
+<!-- ========= Recycled Claim Standard ============== -->
+<div id="rcs-Sidebar" class="sidebar">
+    <div class="side-img">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav_RCS()">×</a>
+        <a href="#"><img src="{% static '/images/brand-logo/RCS-Logo.png' %}" alt="Recycled Claim Standard"
+                class="logo-image"></a>
+        <a class="brand-name" href="#">Recycled Claim Standard</a>
+        <div class="apply-block" onclick="openPopup()">
+            <a href="javascript:void(0)" class="apply-btn" onclick="openPopup()">Apply Now</a>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3>Aims</h3>
+        <p>
+            The aim of the Recycled Claim Standard (RCS) is to increase the use of recycled
+            materials and is intended for use with any product that contains at least 5% recycled material.
+        </p>
+        <p>
+            The standard has four objectives: (1) aligning definitions of recycled across
+            multiple applications, (2) tracking and tracing recycled input materials, (3)
+            providing customers with a tool to make informed decisions and (4) providing
+            assurance that materials in a final product are recycled.
+        </p>
+        <h3>Scope</h3>
+        <p>
+            Applicants may choose the types of recycled materials they want to have audited.
+            Common recycled materials include down and feathers, PET, filament, yarn/thread
+            and fabric. Applicant companies, such as brands and manufacturers, may select the
+            final products they would like to have audited. A complete list of products and
+            product categories can be found <a
+                href="https://idfl.com/textile-exchange-te-mapping-product-categories-and-product-details/"
+                style="font-size: 12px; display: inline;padding: 0;">here</a>.
+        </p>
+        <h3>Requirements</h3>
+        <p>
+            All selected materials and products will be evaluated from the recycling state
+            to the last seller in the final business-to-business transaction based upon
+            requirements in the following areas:
+        </p>
+        <span>DOWNPASS currently has two standards:</span>
+        <ul>
+            <li>Recycled material</li>
+            <li>Supply chain</li>
+        </ul>
+    </div>
+
+    <div class="block-process">
+        <h2>Audit & Certification Process</h2>
+        <img src="{% static '/images/audit-process.png' %}" alt="" class="img-process">
+    </div>
+    <div class="block-bottom"></div>
+</div>
+
+<!-- ========= Global Organic Textile Standard ============== -->
+<div id="gots-Sidebar" class="sidebar">
+    <div class="side-img">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav_GOTS()">×</a>
+        <a href="#"><img src="{% static '/images/brand-logo/GOTS-Logo.png' %}" alt="Global Organic Textile Standard"
+                class="logo-image"></a>
+        <a class="brand-name" href="#">Global Organic Textile Standard (GOTS)</a>
+        <div class="apply-block">
+            <a href="javascript:void(0)" class="apply-btn" onclick="openPopup()">Apply Now</a>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3>Aims</h3>
+        <p>
+            The aim of the Global Organic Textile Standard (GOTS) is to define
+            world-wide recognized requirements that ensure the certified organic
+            status of textiles, from the harvesting of the raw fiber, through
+            environmentally and socially responsible manufacturing up to labeling
+            order to provide credible assurance to the end consumer. Textile
+            processors and manufacturers are thus enabled to export their organic
+            fabrics and garments with one certification accepted in all major markets.
+        </p>
+        <h3>Scope</h3>
+        <p>
+            The GOTS certification system starts with the first processing step
+            in the textile supply chain. For example, for cotton, ginning is the
+            first processing stage,
+            at which seeds are removed from cotton bolls.
+        </p>
+        <p>
+            The GOTS logo can only be applied to the final product if all stages
+            comply with the GOTS criteria. Therefore,
+            all processors, manufacturers, and traders need to be certified.
+        </p>
+        <span>There are two GOTS label-grades:</span>
+        <ol>
+            <li>
+                'organic' requiring a minimum of 95% organic fibers; and
+            </li>
+            <li>
+                'made with organic materials' requiring at least 70% organic fibers.
+            </li>
+        </ol>
+        <p class="text-red">
+            GOTS certification most often applies towards fibers, yarns,
+            fabrics, apparel, home textiles, mattresses, personal hygiene
+            products and food
+            contact textiles made with minimum 70% organic fibers.
+        </p>
+        <p>
+            <b>Note:</b> Organic fiber production (i.e. organic farm certification)
+            is not directly covered by the GOTS certification system, as GOTS
+            itself does not set standards for organic fiber cultivation. Instead,
+            the cultivation of organic fibers is under the scope of organic farming standards,
+            many of them defined by national governments.
+        </p>
+        <h2><b>Requirements</b></h2>
+        <p>
+            GOTS certification is based on on-site evaluations of the entire
+            textile supply chain, including processors, manufacturers,
+            and traders - beginning with the first processor. The GOTS evaluation
+            assesses the processing and manufacturing of textiles on the basis of
+            both environmental and social criteria. This means assessing everything
+            from the chemical inputs being used to the ethical treatment of workers.
+            To become GOTS certified, it is mandatory to meet all of the criteria.
+        </p>
+        <span>GOTS criteria includes requirements for:</span>
+        <ol>
+            <li>Organic Fiber Production</li>
+            <li>Organic Fiber Material Composition</li>
+            <li>Chemical Inputs in all Processing Stages</li>
+            <li>Separation and Identification</li>
+            <li>Additional Fiber Materials and Accessories</li>
+            <li>Environmental Management</li>
+            <li>Wastewater Treatment</li>
+            <li>Technical Quality Parameters / Limit Values</li>
+            <li>Social Criteria</li>
+        </ol>
+        <span>For detailed requirements, see the latest version of GOTS.</span>
+    </div>
+
+    <div class="block-process">
+        <h2>Audit & Certification Process</h2>
+        <img src="{% static '/images/audit-process.png' %}" alt="" class="img-process">
+    </div>
+    <div class="block-bottom"></div>
+</div>
+
+<!-- ========= Organic Content Standard ============== -->
+<div id="ocs-Sidebar" class="sidebar">
+    <div class="side-img">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav_OCS()">×</a>
+        <a href="#"><img src="{% static '/images/brand-logo/OCS-Logo.png' %}" alt="Organic Content Standard"
+                class="logo-image"></a>
+        <a class="brand-name" href="#">Organic Content Standard (OCS)</a>
+        <div class="apply-block">
+            <a href="javascript:void(0)" class="apply-btn" onclick="openPopup()">Apply Now</a>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3>Aims</h3>
+        <p>
+            The aim of the Organic Content Standard (OCS) is to increase organic
+            agriculture production and is intended for use with any product that
+            contains at least 5% organically grown material. The objectives of the
+            standard are to (1) provide the industry with the tools to verify the
+            organically grown content of purchased product, (2) provide companies
+            with a tool to communicate organically grown content claims to the
+            industry and (3) provide organic farmers with access to the global organic market.
+        </p>
+        <h3>Scope</h3>
+        <p>
+            OCS has two different scopes, one for farms and another for supply chain companies.
+            IDFL performs OCS certifications for supply chain companies only, including any
+            processing, manufacturing or textile companies.
+        </p>
+        <h3>Requirements</h3>
+        <span>
+            Applicants may choose the type of products they wish to have audited
+            according to the following requirements:
+        </span>
+        <ul>
+            <li>Supply chain criteria as defined in the Content Claim Standard-101 (CCS)</li>
+            <li>Claimed material</li>
+        </ul>
+    </div>
+
+    <div class="block-process">
+        <h2>Audit & Certification Process</h2>
+        <img src="{% static '/images/audit-process.png' %}" alt="" class="img-process">
+    </div>
+    <div class="block-bottom"></div>
+</div>
+
+<!-- ========= Responsible Down Standard ============== -->
+<div id="rds-Sidebar" class="sidebar">
+    <div class="side-img">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav_RDS()">×</a>
+
+        <a href="#"><img src="{% static '/images/brand-logo/RDS-Logo.png' %}" alt="Responsible Down Standard"
+                class="logo-image"></a>
+        <a class="brand-name" href="#">Responsible Down Standard (RDS)</a>
+        <div class="apply-block">
+            <a href="javascript:void(0)" class="apply-btn" onclick="openPopup()">Apply Now</a>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3>Aims</h3>
+        <p>
+            The aim of the Responsible Down Standard (RDS) is to ensure that the waterfowl
+            in the down supply chain are treated humanely. This is accomplished by providing
+            the industry with a tool to verify that down and feathers do not come from animals
+            what have been subjected to any unnecessary harm and by instituting a chain of custody
+            system to validate the source of the material.
+        </p>
+        <h3>Scope</h3>
+        <p>
+            The RDS is applicable for collector-based channels of both industrial and small farms.
+            The standard may apply to both blended and 100% certified products, however final products
+            may only be labeled as RDS certified if the down and feathers are 100% certified.
+        </p>
+        <p>
+            Applicants may choose the types of products they intend to have audited. Companies
+            such as down processors and trade companies that deal with bulk materials often select
+            the white and/or grey down and feathers from ducks and/or geese. A full list of raw
+            materials can be found <a style="font-size: 12px; display: inline;padding: 0;"
+                href="https://idfl.com/services/audits-certifications/list-of-raw-materials/">here</a>. Companies,
+            such as manufacturers and brand names, that
+            deal with final products frequently select apparel and home textile products. A full
+            list of products and product categories can be found <a style="font-size: 12px; display: inline;padding: 0;"
+                href="https://idfl.com/textile-exchange-te-mapping-product-categories-and-product-details/">here</a>.
+        </p>
+        <h3>Requirements</h3>
+        <span>IDFL is an approved certification body for all six modules composing the standard:</span>
+        <ul>
+            <li>Farm module</li>
+            <li>Slaughter module</li>
+            <li>Transport module</li>
+            <li>Small Farmer Group module (SFG)</li>
+            <li>Textile Exchange Content Claim Standard</li>
+            <li>Parent farm certification (optional)</li>
+        </ul>
+    </div>
+
+    <div class="block-process">
+        <h2>Audit & Certification Process</h2>
+        <img src="{% static '/images/audit-process.png' %}" alt="" class="img-process">
+    </div>
+    <div class="block-bottom"></div>
+</div>
+
+<!-- ========= Responsible Mohair Standard ============== -->
+<div id="rms-Sidebar" class="sidebar">
+    <div class="side-img">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav_RMS()">×</a>
+
+        <a href="#"><img src="{% static '/images/brand-logo/RMS.png' %}" alt="Responsible Mohair Standard"
+                class="logo-image"></a>
+        <a class="brand-name" href="#">Responsible Mohair Standard (RMS)</a>
+        <div class="apply-block">
+            <a href="javascript:void(0)" class="apply-btn" onclick="openPopup()">Apply Now</a>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3>Aims</h3>
+        <p>
+            The aim of the Responsible Mohair Standard (RMS) is to address the welfare of
+            mohair and the land they graze on. The objectives of the standard are to (1)
+            provide the industry with a tool to recognize farmer's best practices, (2)
+            ensure wool comes from farms with responsible land management and (3) practice
+            holistic respect for the animal welfare of the sheep.
+        </p>
+        <h3>Scope</h3>
+        <p>
+            RMS has two different scopes, one for farms and another for supply chain companies.
+            IDFL performs RMS certifications for supply chain companies only, including any
+            processing, manufacturing or textile companies.
+        </p>
+        <h3>Requirements</h3>
+        <p>
+            The RMS requires all sites from farms through the final business to business
+            seller to be certified. Farms are certified according to animal welfare, land
+            management and social modules. All other stages of the supply chain are certified
+            according to Content Claim Standard requirements.
+        </p>
+    </div>
+
+    <div class="block-process">
+        <h2>Audit & Certification Process</h2>
+        <img src="{% static '/images/audit-process.png' %}" alt="" class="img-process">
+    </div>
+    <div class="block-bottom"></div>
+</div>
+
+<!-- ========= Responsible Wool Standard ============== -->
+<div id="rws-Sidebar" class="sidebar">
+    <div class="side-img">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav_RWS()">×</a>
+
+        <a href="#"><img src="{% static '/images/brand-logo/RWS.png' %}" alt="Responsible Wool Standard"
+                class="logo-image"></a>
+        <a class="brand-name" href="#">Responsible Wool Standard (RWS)</a>
+        <div class="apply-block">
+            <a href="javascript:void(0)" class="apply-btn" onclick="openPopup()">Apply Now</a>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3>Aims</h3>
+        <p>
+            The aim of the Responsible Wool Standard (RWS) is to address the welfare of sheep
+            and the land they graze on. The objectives of the standard are to (1) provide the
+            industry with a tool to recognize farmer's best practices, (2) ensure wool comes
+            from farms with responsible land management and (3) practice holistic respect for
+            the animal welfare of the sheep.
+        </p>
+        <h3>Scope</h3>
+        <p>
+            RWS has two different scopes, one for farms and another for supply chain companies.
+            IDFL performs RWS certifications for supply chain companies only, including any
+            processing, manufacturing or textile companies.
+        </p>
+        <h3>Requirements</h3>
+        <p>
+            The RWS requires all sites from farms through the final business to business
+            seller to be certified. Farms are certified according to animal welfare, land
+            management and social modules. All other stages of the supply chain are certified
+            according to Content Claim Standard requirements.
+        </p>
+    </div>
+
+    <div class="block-process">
+        <h2>Audit & Certification Process</h2>
+        <img src="{% static '/images/audit-process.png' %}" alt="" class="img-process">
+    </div>
+    <div class="block-bottom"></div>
+</div>
+
+<!-- ========= Organic Content Standard ============== -->
+<div id="ras-Sidebar" class="sidebar">
+    <div class="side-img">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav_RAS()">×</a>
+
+        <a href="#"><img src="{% static '/images/brand-logo/RAS.png' %}" alt="Responsible Alpaca Standard"
+                class="logo-image"></a>
+        <a class="brand-name" href="#">Responsible Alpaca Standard (RAS)</a>
+        <div class="apply-block">
+            <a href="javascript:void(0)" class="apply-btn" onclick="openPopup()">Apply Now</a>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3>Aims</h3>
+        <p>
+            The aim of the Responsible Alpaca Standard (RAS) is to address the welfare of
+            alpaca and the land they graze on. The objectives of the standard are to (1)
+            provide the industry with a tool to recognize farmer's best practices, (2)
+            ensure wool comes from farms with responsible land management and (3) practice
+            holistic respect for the animal welfare of the sheep.
+        </p>
+        <h3>Scope</h3>
+        <p>
+            RAS has two different scopes, one for farms and another for supply chain companies.
+            IDFL performs RAS certifications for supply chain companies only, including any
+            processing, manufacturing or textile companies.
+        </p>
+        <h3>Requirements:</h3>
+        <p>
+            The RAS requires all sites from farms through the final business to business
+            seller to be certified. Farms are certified according to animal welfare, land
+            management and social modules. All other stages of the supply chain are certified
+            according to Content Claim Standard requirements.
+        </p>
+    </div>
+
+    <div class="block-process">
+        <h2>Audit & Certification Process</h2>
+        <img src="{% static '/images/audit-process.png' %}" alt="" class="img-process">
+    </div>
+    <div class="block-bottom"></div>
+</div>
+
+<!-- ========= Higg FEM ============== -->
+<div id="higg-Sidebar" class="sidebar">
+    <div class="side-img">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav_HIGG()">×</a>
+
+        <a href="#"><img src="{% static '/images/brand-logo/higg.png' %}" alt="Higg FEM" class="logo-image-higg"></a>
+        <a class="brand-name" href="#">Higg FEM</a>
+        <div class="apply-block">
+            <a href="javascript:void(0)" class="apply-btn" onclick="openPopup()">Apply Now</a>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3>Aims</h3>
+        <p>
+            Higg FEM is an environmental management standard that gives manufacturers,
+            brands, and retailers and their operations insight into how they are performing
+            as it relates to their environmental impact. The aim of the Higg FEM is to
+            allow the company facilities to assess strengths and weaknesses in environmental
+            performance, implement improvement strategies, and scale sustainability improvements.
+        </p>
+        <h3>Scope</h3>
+        <p>
+            The Higg FEM is not a pass-or-fail assessment/audit, but rather serves to
+            verify the self-assessment submitted by the facility. The scope of the Higg FEM
+            includes all onsite facilities, processes, equipment, and related areas.
+        </p>
+        <h3>Requirements</h3>
+        <span>The self-assessment covers the following factors for environmental impact:</span>
+        <ul>
+            <li>Environmental Management System (EMS)</li>
+            <li>Energy</li>
+            <li>Water</li>
+            <li>Wastewater</li>
+            <li>Air Emissions</li>
+            <li>Waste</li>
+            <li>Chemical Management</li>
+        </ul>
+        <span>For details on each of these sections of the Higg FEM, see the
+            <a style="font-size: 12px; display: inline;padding: 0;"
+                href="https://howtohigg.org/resources/resources-library/">“How to Higg Guide”</a>here.
+        </span>
+        <span>
+            Once the verification is complete, the facility can, if they so choose, post their
+            verification results on Higg.org for benchmarking or sharing.
+        </span>
+        <span>
+            The selected materials and products will be evaluated based upon
+            requirements in the following areas:
+        </span>
+        <ul>
+            <li>Recycling</li>
+            <li>Supply Chain</li>
+            <li>Social</li>
+            <li>Environmental</li>
+            <li>Chemical</li>
+        </ul>
+    </div>
+
+    <div class="block-process">
+        <h2>Audit & Certification Process</h2>
+        <img src="{% static '/images/audit-process.png' %}" alt="" class="img-process">
+    </div>
+    <div class="block-bottom"></div>
+</div>
+
+<!-- ========= Ocean Bound Plastic Standard ============== -->
+<div id="obp-Sidebar" class="sidebar">
+    <div class="side-img">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav_OBP()">×</a>
+
+        <a href="#"><img src="{% static '/images/brand-logo/OBP-Cert-Logo.png' %}" alt="Ocean Bound Plastic Standard"
+                class="logo-image"></a>
+        <a class="brand-name" href="#">Ocean Bound Plastic Standard (OBP)</a>
+        <div class="apply-block">
+            <a href="javascript:void(0)" class="apply-btn" onclick="openPopup()">Apply Now</a>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3>Aims</h3>
+        <p>
+            The OBP Certification focuses on stopping plastic waste from reaching
+            the ocean through collecting on shorelines and waterways. Around 80% of the ocean's
+            plastic waste comes from inland sources.
+        </p>
+        <h3>Scope</h3>
+        <span>IDFL works with ZPO (Zero Plastic Oceans) to provide certifications for:</span>
+        <ul>
+            <li>Collection Organizations</li>
+            <li>Recyclers</li>
+            <li>Plastic Producers & Users</li>
+            <li>Organizations interested in the neutralization of their plastic footprint</li>
+        </ul>
+        <span>IDFL is certified to conduct the following certifications on behalf of ZPO:</span>
+        <ul>
+            <li>OBP COLLECTION ORGANIZATION STANDARD</li>
+            <li>OBP RECYCLING ORGANIZATION STANDARD</li>
+            <li>OBP NEUTRALIZATION SERVICES PROVIDER STANDARD</li>
+            <li>OBP PLASTIC PRODUCERS & USERS STANDARD</li>
+        </ul>
+        <h3>Requirements</h3>
+        <p>
+            All plastic must be collected from a verified waterway, which creates the potential
+            for the plastic to become ocean-bound. All plastic must be traced back to a verified
+            source and traced throughout the supply chain.
+        </p>
+    </div>
+
+    <div class="block-process">
+        <h2>Audit & Certification Process</h2>
+        <img src="{% static '/images/audit-process.png' %}" alt="" class="img-process">
+    </div>
+    <div class="block-bottom"></div>
+</div>
+
+<!-- ========= JBA Traceability Audit Standard ============== -->
+<div id="tas-Sidebar" class="sidebar">
+    <div class="side-img">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav_TAS()">×</a>
+
+        <a href="#">
+            <img src="{% static '/images/brand-logo/en_logo_j-tas.png' %}" alt="JBA Traceability Audit Standard"
+                class="logo-image-tas">
+        </a>
+        <a class="brand-name" href="#">JBA Traceability Audit Standard</a>
+        <div class="apply-block">
+            <a href="javascript:void(0)" class="apply-btn" onclick="openPopup()">Apply Now</a>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3>Aims</h3>
+        <p>
+            The Japan Bedding Goods Association (JBA) has organized the
+            JBA Traceability Audit System (J-TAS) to identify the origin
+            of down and feathers. Brands and manufacturers within Japan
+            should attach a label displaying the country of origin to their bedding products.
+        </p>
+        <p>
+            The aim of the J-TAS is to create a traceability audit system
+            that (1) enables traceability from end products to the origin
+            of the down and feathers, (2) promises consumers reliability
+            when purchasing down and feather bedding goods and (3) contributes
+            to JBA members, related organizations and the vitalization of the industry.
+        </p>
+        <h3>Requirements</h3>
+        <span>Receiving J-TAS approval requires completing the following process:</span>
+        <ul>
+            <li>
+                Admission to the J-TAS Association: The application can be completed
+                online at
+                <a style="font-size: 12px; display: inline;padding: 0;" href="https://www.jba210.jp/j-tas/">
+                    this link</a>. The J-TAS is only applicable to bedding manufacturers
+                and other entities involved in the sourcing and processing of virgin down and feathers.
+            </li>
+            <li>
+                Outside of Japan, J-TAS may be applied to procurement traders of raw
+                materials or down and feather processors.
+            </li>
+            <li>
+                Within Japan, J-TAS may be applied to importers, producers of down
+                and feather products, or labelers.
+            </li>
+            <li>
+                Certification: After establishing membership in the J-TAS Association,
+                an audit according to J-TAS standards must be conducted. IDFL is the only
+                organization authorized to preform J-TAS audits for entities outside of Japan,
+                and will conduct the audit according to the process outlined below this table.
+            </li>
+        </ul>
+        <p>
+            <b>Confirmation:</b> Once certification is completed, the applicant company will
+            forward the certificate and audit report to the J-TAS association for final
+            review and confirmation. After receiving final approval, the applicant will
+            be added to the list of J-TAS approved companies.
+        </p>
+    </div>
+
+    <div class="block-process">
+        <h2>Audit & Certification Process</h2>
+        <img src="{% static '/images/audit-process.png' %}" alt="" class="img-process">
+    </div>
+    <div class="block-bottom"></div>
+</div>
+
+<!-- ========= International Down Standard ============== -->
+<div id="ids-Sidebar" class="sidebar">
+    <div class="side-img">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav_IDS()">×</a>
+
+        <a href="#"><img src="{% static '/images/brand-logo/ids-logo.png' %}" alt="International Down Standard"
+                class="logo-image"></a>
+        <a class="brand-name" href="#">International Down Standard</a>
+        <div class="apply-block">
+            <a href="javascript:void(0)" class="apply-btn" onclick="openPopup()">Apply Now</a>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3>Aims</h3>
+        <p>
+            The aim of the IDFL Down Standard (IDS) is to verify that down and feather
+            products are ethically sourced. It allows processors, trade companies and
+            manufacturers to demonstrate their ability to provide ethically produced
+            materials and helps retailers and brands confirm their suppliers are
+            producing materials ethically.
+        </p>
+        <h3>Scope</h3>
+        <p>
+            IDS must begin at the raising farm or the parent farm, and is appropriate
+            for both industrial supply chains and collector-based supply chains. While
+            IDS is a supplier certification, traceability verification for specific
+            purchase orders or products can be completed separately and is recommended
+            for best practices.
+        </p>
+        <p>
+            Applicants may choose the types of products they intend to have audited.
+            Companies such as down processors and trade companies that deal with bulk
+            materials often choose white and/or grey down and feathers from ducks and/or
+            geese. Companies such as manufacturers and brand names that deal in final
+            products frequently select apparel and home textile products. Other products
+            may include any non-textile use of down and feathers in a consumer product.
+        </p>
+        <h3>Requirements</h3>
+        <p>
+            IDS combines the most frequently requested IDFL Traceability Audit System
+            options in one complete standard. The IDS maintains the following fixed set
+            of requirements for each link in the supply chain:
+        </p>
+        <ul>
+            <li>General operations</li>
+            <li>Traceability</li>
+            <li>No live-plucking</li>
+            <li>No force-feeding</li>
+            <li>Animal welfare</li>
+            <li>Basic human welfare</li>
+            <li>Corporate responsibility</li>
+        </ul>
+    </div>
+
+    <div class="block-process">
+        <h2>Audit & Certification Process</h2>
+        <img src="{% static '/images/audit-process.png' %}" alt="" class="img-process">
+    </div>
+    <div class="block-bottom"></div>
+</div>
+
+<!-- ========= Downpass Standard ============== -->
+<div id="ds-Sidebar" class="sidebar">
+    <div class="side-img">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav_DS()">×</a>
+
+        <a href="#"><img src="{% static '/images/brand-logo/Downpass-Logo.png' %}" alt="Downpass Standard"
+                class="logo-image"></a>
+        <a class="brand-name" href="#">Downpass Standard</a>
+        <div class="apply-block">
+            <a href="javascript:void(0)" class="apply-btn" onclick="openPopup()">Apply Now</a>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3>Aims</h3>
+        <p>
+            The aim of DOWNPASS is to ensure that the worldwide demand
+            for down and feathers can be met from ethical sources.
+            Companies, including down and feather suppliers and brand
+            names, may apply to join DOWNPASS. Member companies that
+            comply with the association audit
+            requirements may use the DOWNPASS label.
+        </p>
+        <h3>Requirements</h3>
+        <span>DOWNPASS currently has two standards:</span>
+        <ul>
+            <li>
+                DOWNPASS 2016: This is a modular standard including a
+                guarantee of no live-plucking and basic traceability
+                compliance. Optional modules include a guarantee of no
+                force-feeding and traceability to the farm or parent farm.
+            </li>
+            <li>
+                DOWNPASS 2017: This is a zero tolerance standard including
+                the monitoring of breeding conditions, traceability back to
+                the breeding area, quality checks of filling material by
+                accredited testing institutes and no molt harvesting,
+                live-plucking, force-feeding, or parallel production at the farm level.
+            </li>
+        </ul>
+    </div>
+
+    <div class="block-process">
+        <h2>Audit & Certification Process</h2>
+        <img src="{% static '/images/audit-process.png' %}" alt="" class="img-process">
+    </div>
+    <div class="block-bottom"></div>
+</div>
+
+<!-- ========= European Down & Feather Association ============== -->
+<div id="fav-Sidebar" class="sidebar">
+    <div class="side-img">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav_FAV()">×</a>
+        <a href="#"><img src="{% static '/images/brand-logo/fav_edfa.png' %}" alt="European Down & Feather Association"
+                class="logo-image"></a>
+        <a class="brand-name" href="#">EDFA Traceability Standard</a>
+        <div class="apply-block">
+            <a href="javascript:void(0)" class="apply-btn" onclick="openPopup()">Apply Now</a>
+        </div>
+    </div>
+    <div class="block-content">
+        <h3>Aims</h3>
+        <p>
+            The European Down and Feather Association (EDFA),
+            founded in 1980 and headquartered in Mainz, Germany,
+            is made up of more than 90 companies and national organizations
+            from 23 countries. Companies, including down and feather suppliers
+            and brand names, may apply to join the EDFA.
+        </p>
+        <p>
+            The aim of the EDFA is to defend consumer interests and animal welfare.
+            Members of the EDFA strictly condemn live-plucking and are committed
+            to a documentary traceability system and code of conduct stipulating
+            that no down or feathers are harvested in a manner that inflicts pain
+            on animals.
+        </p>
+        <h3>Scope</h3>
+        <p>
+            The EDFA Traceability Standard serves as a basis for establishing
+            a system capable of obtaining information on the harvesting of down
+            and feathers, and covers their harvesting globally. This standard
+            is a way for companies to publicly align
+            themselves with the ethical harvesting of down and feathers.
+        </p>
+    </div>
+
+    <div class="block-process">
+        <h2>Audit & Certification Process</h2>
+        <img src="{% static '/images/audit-process.png' %}" alt="" class="img-process">
+    </div>
+</div>
+
+<!-- ========================= -->
+<div class="close-toggle-bar" onclick="close_toggle()">
+    <!-- <a href="javascript:void(0)" class="" >close</a> -->
+</div>
+<!-- ========================= -->
+<div class="heading-title">
+    <h1>Audits & Certifications</h1>
+</div>
+<div id="container">
+    <div id="main" class="container-80">
+        <div class="description">
+            <p>IDFL conducts on-site audits, and documentation reviews to verify supplier traceability
+                and social, chemical, environmental and animal welfare.
+                Click below to learn details about each of the audit certifications offered by IDFL.</p>
+        </div>
+        <!-- ==================== -->
+        <div class="row-brand">
+            <!-- GRS -->
+            <div class="col-3">
+                <div class="block-logo">
+                    <div class="logo-image" onclick="openNav_GRS()">
+                        <img src="{% static '/images/brand-logo/grs-logo.png' %}" alt="Global Recycled Standard">
+                    </div>
+                    <a class="brand-name" href="">Global Recycled Standard</a>
+                </div>
+            </div>
+            <!-- RCS -->
+            <div class="col-3">
+                <div class="block-logo" onclick="openNav_RCS()">
+                    <div class="logo-image">
+                        <img src="{% static '/images/brand-logo/RCS-Logo.png' %}" alt="Recycled Claim Standard">
+                    </div>
+                    <a class="brand-name" href="#">Recycled Claim Standard</a>
+                </div>
+            </div>
+            <!-- GOTS -->
+            <div class="col-3">
+                <div class="block-logo" onclick="openNav_GOTS()">
+                    <div class="logo-image">
+                        <img src="{% static '/images/brand-logo/GOTS-Logo.png' %}"
+                            alt="Global Organic Textile Standard">
+                    </div>
+                    <a class="brand-name" href="#">Global Organic Textile Standard</a>
+                </div>
+            </div>
+            <!-- OCS -->
+            <div class="col-3">
+                <div class="block-logo" onclick="openNav_OCS()">
+                    <div class="logo-image">
+                        <img src="{% static '/images/brand-logo/OCS-Logo.png' %}" alt="Organic Content Standard">
+                    </div>
+                    <a class="brand-name" href="#">Organic Content Standard</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-brand">
+            <!-- RDS -->
+            <div class="col-3">
+                <div class="block-logo" onclick="openNav_RDS()">
+                    <div class="logo-image">
+                        <img src="{% static '/images/brand-logo/RDS-Logo.png' %}" alt="Responsible Down Standard">
+                    </div>
+                    <a class="brand-name" href="#">Responsible Down Standard</a>
+                </div>
+            </div>
+            <!-- RMS -->
+            <div class="col-3">
+                <div class="block-logo" onclick="openNav_RMS()">
+                    <div class="logo-image">
+                        <img src="{% static '/images/brand-logo/RMS.png' %}" alt="Responsible Mohair Standard">
+                    </div>
+                    <a class="brand-name" href="#">Responsible Mohair Standard</a>
+                </div>
+            </div>
+            <!-- RWS -->
+            <div class="col-3">
+                <div class="block-logo" onclick="openNav_RWS()">
+                    <div class="logo-image">
+                        <img src="{% static '/images/brand-logo/RWS.png' %}" alt="Responsible Wool Standard">
+                    </div>
+                    <a class="brand-name" href="#">Responsible Wool Standard</a>
+                </div>
+            </div>
+            <!-- RAS -->
+            <div class="col-3">
+                <div class="block-logo" onclick="openNav_RAS()">
+                    <div class="logo-image">
+                        <img src="{% static '/images/brand-logo/RAS.png' %}" alt="Responsible Alpaca Standard">
+                    </div>
+                    <a class="brand-name" href="#">Responsible Alpaca Standard</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-brand">
+            <!-- HIGG -->
+            <div class="col-3">
+                <div class="block-logo" onclick="openNav_HIGG()">
+                    <div class="logo-image">
+                        <img src="{% static '/images/brand-logo/higg.png' %}" class="custom-logo" alt="Higg FEM">
+                    </div>
+                    <a class="brand-name" href="#">Higg FEM</a>
+                </div>
+            </div>
+            <!-- OBP -->
+            <div class="col-3">
+                <div class="block-logo" onclick="openNav_OBP()">
+                    <div class="logo-image">
+                        <img src="{% static '/images/brand-logo/OBP-Cert-Logo.png' %}"
+                            alt="Ocean Bound Plastic Standard">
+                    </div>
+                    <a class="brand-name" href="#">Ocean Bound Plastic Standard</a>
+                </div>
+            </div>
+            <!-- TAS -->
+            <div class="col-3">
+                <div class="block-logo" onclick="openNav_TAS()">
+                    <div class="logo-image">
+                        <img src="{% static '/images/brand-logo/en_logo_j-tas.png' %}" class="custom-logo"
+                            alt="JBA Traceability Audit Standard">
+                    </div>
+                    <a class="brand-name custom-title" href="#">JBA Traceability Audit Standard</a>
+                </div>
+            </div>
+            <!-- IDS -->
+            <div class="col-3">
+                <div class="block-logo" onclick="openNav_IDS()">
+                    <div class="logo-image">
+                        <img src="{% static '/images/brand-logo/ids-logo.png' %}" alt="International Down Standard">
+                    </div>
+                    <a class="brand-name" href="#">International Down Standard</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-brand">
+            <!-- new standard-->
+            <div class="col-3">
+                <!-- <div class="block-logo">
+                        <div class="logo-image">
+                            <img src="" alt="new standard">
+                        </div>
+                        <a class="brand-name" href="#"></a>
+                    </div> -->
+            </div>
+            <!-- DS -->
+            <div class="col-3">
+                <div class="block-logo" onclick="openNav_DS()">
+                    <div class="logo-image">
+                        <img src="{% static '/images/brand-logo/Downpass-Logo.png' %}" alt="Downpass Standard">
+                    </div>
+                    <a class="brand-name" href="#">Downpass Standard</a>
+                </div>
+            </div>
+            <!-- FAV -->
+            <div class="col-3">
+                <div class="block-logo" onclick="openNav_FAV()">
+                    <div class="logo-image">
+                        <img src="{% static '/images/brand-logo/fav_edfa.png' %}"
+                            alt="European Down & Feather Association">
+                    </div>
+                    <a class="brand-name" href="#">European Down & Feather Association</a>
+                </div>
+            </div>
+            <!-- new standard-->
+            <div class="col-3">
+                <!-- <div class="block-logo">
+                        <div class="logo-image">
+                            <img src="" alt="new standard">
+                        </div>
+                        <a class="brand-name" href="#"></a>
+                    </div> -->
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- ------ Application Information Alert Popup -->
+<div id="alert-info" class="alter-container close-alert">
+    <div class="container-box">
+        <div class="alert-box">
+            <span id="close-popup"><a href="javascript:void(0)" class="closebtn" onclick="closePopup()">x</a></span>
+            <h2>Application Information</h2>
+            <ul>
+                <li>We will give you more information and receive application form id.</li>
+                <li>Plase enter application form id and click search button.</li>
+            </ul>
+            <h3>Contact Us</h3>
+            <div class="right-box"></div>
+            <div class="contact-box">
+                <div class="brand-row">
+                    <h4>labratory and institute</h4>
+                    <img class="logo-contact" src="{% static 'images/idfl-logo.png' %}" alt="">
+                    <h4 class="audit-block" style="color: white;">audit and certification</h4>
+                </div>
+                <div class="qrcode-row">
+                    <div class="qr-block lab-block">
+                        <img class="qrcode" src="{% static 'images/textile.jpg' %}" alt="">
+                        <img class="qrcode" src="{% static 'images/down.jpg' %}" alt="">
+                    </div>
+                    <div class="qr-block audit-block">
+                        <img class="qrcode" src="{% static 'images/inspection.jpg' %}" alt="">
+                        <img class="qrcode" src="{% static 'images/audit.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="contact-row">
+                    <a href="">(+84) 282 244 7611</a>
+                    <ion-icon class="icon" name="call-outline"></ion-icon>
+                    <a href="" class="audit-block" style="color: white;">(+84) 92 876 86 43</a>
+                </div>
+                <div class="contact-row">
+                    <a href="">vietnam@idfl.com</a>
+                    <ion-icon class="icon" name="mail-open-outline"></ion-icon>
+                    <a href="" class="audit-block" style="color: white;">vn.audits@idfl.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

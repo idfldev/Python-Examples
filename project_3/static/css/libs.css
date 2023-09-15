@@ -1,0 +1,103 @@
+/* ========= css variables set up ======== */
+:root {
+    --main-color: #2596be;    /* rgb(37, 150, 190); */
+    --light-1: #d0e2f0;    /* rgb(208,226,240); */
+    --light-2: #8dbcdc;    /* rgb(141,188,220); */
+    --light-3: #84b4d4;    /* rgb(132,180,212); */
+    --light-4: #63a1cc;    /* rgb(99,161,204); */
+    --blue-1: #449ccc;    /* rgb(68,156,204); */
+    --blue-2: #3f8ec4;    /* rgb(63,142,196); */
+    --blue-3: #2484bc;    /* rgb(36,132,188); */
+    --blue-4: #0878b8;    /* rgb(8,120,184); */
+    --blue-5: #0463b2;    /* rgb(4,99,178); */
+    --border: #626262;
+}
+
+/* ========= Layout ============ */
+.wrap-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.container-90 {
+    width: 90%;
+}
+.container-80 {
+    width: 80%;
+}
+.container {
+    width: 100%;
+}
+.form-container {
+    /* width: 100%; */
+    margin: 0 auto;
+}
+/* ========= Row & Cols ============ */
+.row {
+    display: flex;
+}
+.col-1 {
+    margin: 0;
+    padding: 0;
+    width: 8%;
+}
+.col-2 {
+    margin: 0;
+    padding: 0;
+    width: 17%;
+}
+.col-3 {
+    margin: 0;
+    padding: 0;
+    width: 25%;
+}
+.col-4 {
+    margin: 0;
+    padding: 0;
+    width: 33%;
+}
+.col-5 {
+    margin: 0;
+    padding: 0;
+    width: 42%;
+}
+.col-6 {
+    margin: 0;
+    padding: 0;
+    width: 50%;
+}
+.col-7 {
+    margin: 0;
+    padding: 0;
+    width: 58%;
+}
+.col-8 {
+    margin: 0;
+    padding: 0;
+    width: 67%;
+}
+.col-9 {
+    margin: 0;
+    padding: 0;
+    width: 67%;
+}
+.col-10 {
+    margin: 0;
+    padding: 0;
+    width: 83%;
+}
+.col-11 {
+    margin: 0;
+    padding: 0;
+    width: 92%;
+}
+/* ======== COLOR ========== */
+.text-red {
+    color: red;
+}
+/* ============= Table ==================== */
+/* table { border-collapse: separate; } */
+/* tr:first-child td:first-child { border-top-left-radius: 10px; }
+tr:first-child td:last-child { border-top-right-radius: 10px; } */
+tr:last-child td:first-child { border-bottom-left-radius: 10px; }
+tr:last-child td:last-child { border-bottom-right-radius: 10px; }

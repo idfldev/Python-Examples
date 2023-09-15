@@ -1,0 +1,278 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+/* ========== libs =============== */
+.text-red {
+  color: red;
+}
+/* -------------------------------- */
+.container {
+  justify-content: center;
+}
+#main {
+  transition: margin-right 0.5s;
+  padding: 16px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.heading-title {
+  height: 400px;
+  background-image: url("{% static '/images/audits.original.jpg' %}");
+  background-size: cover;
+}
+.heading-title h1 {
+  text-align: center;
+  font-size: 3.5em;
+  font-family: "PT Serif";
+  line-height: 400px;
+  color: white;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.description {
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+}
+.description p {
+  font-size: 18px;
+  margin: 0 10px;
+}
+/* ====================================== */
+.row-brand {
+  display: flex;
+  margin: 20px auto;
+}
+.row-brand .col-3 {
+  width: 25%;
+}
+.row-brand .block-logo {
+  height: 250px;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+.row-brand .block-logo:hover {
+  margin: 10px;
+}
+
+.block-logo .logo-image {
+  height: 170px;
+  margin: 10px;
+}
+.block-logo img {
+  width: 53%;
+}
+.block-logo .custom-logo {
+  width: 80%;
+  margin-top: 50px;
+}
+.row-brand .block-logo .brand-name {
+  text-decoration: none;
+  color: #0463b2;
+}
+.row-brand .block-logo .brand-name:hover {
+  color: #032bf5;
+}
+/* ----------- Sideber ------------------- */
+.sidebar .brand-name {
+  display: block;
+  width: 50%;
+  text-decoration: none;
+  color: #0463b2;
+  margin: 15px 25px;
+}
+.sidebar .brand-name:hover {
+  color: #3e31d3;
+}
+
+/* =========== toggle ======================== */
+.sidebar {
+  height: 100%;
+  /* width: 600px !important; */
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #f7f4f4;
+  box-shadow: -4px 4px 10px rgba(14, 0, 0, 0.7);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+/* ============================= */
+.close-toggle-bar {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+}
+/* style="font-size: 12px; display: inline;padding: 0;" */
+/* ========================= */
+.sidebar .side-img {
+  display: flex;
+  margin: 0px 10px 50px 10px;
+  z-index: 2;
+  position: fixed;
+  top: 0px;
+  background-color: #f7f4f4;
+  width: 60%;
+  height: 130px;
+  padding: 5px 0;
+}
+.side-img .logo-image {
+  width: 80px;
+}
+/* ===================== */
+.side-img .logo-image-tas {
+  width: 100px;
+  margin-top: 30px;
+}
+.side-img .logo-image-grs {
+  width: 100px;
+}
+.side-img .logo-image-higg {
+  width: 100px;
+  margin-top: 30px;
+}
+/* ===================== */
+.side-img .brand-name {
+  margin-left: 20px;
+  color: #0463b2;
+  font-weight: 600;
+  margin-top: 40px;
+}
+.sidebar .apply-block {
+  border: 1px solid #032bf5;
+  position: absolute;
+  top: 92px;
+  height: 30px;
+  width: 100px;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 30px;
+  transition: all.5s;
+}
+.sidebar .apply-block:hover {
+  background-color: #032bf5;
+  border: none;
+}
+
+.sidebar .apply-block .apply-btn {
+  color: #032bf5;
+  font-weight: 900;
+  transition: all.5s;
+}
+
+.sidebar .apply-block .apply-btn:hover {
+  color: white;
+}
+
+.sidebar .closebtn {
+  text-decoration: none;
+  font-size: 36px;
+  color: red;
+  font-weight: bold;
+  display: inline;
+  position: absolute;
+  z-index: 5;
+  top: 20px;
+  left: 480px;
+  margin-left: 20px;
+}
+.sidebar .closebtn:hover {
+  color: #032bf5;
+}
+
+/* ======================== */
+.sidebar .block-content {
+  padding: 10px;
+  margin: 70px 10px 50px 10px;
+}
+.sidebar a {
+  text-decoration: none;
+  color: #032bf5;
+}
+.sidebar a:hover {
+  color: #0463b2;
+}
+.block-content h3 {
+  margin: 10px 0;
+}
+.block-content ol,
+p,
+span,
+ul {
+  font-size: 14px;
+  font-family: "Segoe UI", sans-serif;
+}
+.block-content p {
+  text-indent: 30px;
+  margin: 10px 0;
+}
+.block-content span {
+  margin-left: 30px;
+  display: block;
+  margin: 5px;
+}
+.block-content ul {
+  margin: 10px 10px 10px 50px;
+}
+.block-content ul li {
+  margin: 10px 0;
+}
+.block-content ol {
+  margin: 10px 55px;
+}
+.block-content ol li {
+  margin: 10px 0;
+}
+.sidebar .block-process {
+  background-color: #032bf5;
+  margin: -50px 10px 0 10px;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 1px 1px 4px #626262;
+}
+.block-process h2 {
+  text-align: center;
+  margin: 10px 0;
+  color: white;
+}
+.block-process .img-process {
+  height: 200px;
+  width: 100%;
+}
+.sidebar .block-bottom {
+  height: 50px;
+  margin-top: 50px;
+}
+/* ==================================== */
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+/* ================================== */
