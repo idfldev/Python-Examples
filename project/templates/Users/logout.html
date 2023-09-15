@@ -1,0 +1,15 @@
+{% extends 'Layout/base.html' %}
+
+{% block content %}
+  <h2>Logout</h2>
+  {% comment %} {% if messages %}
+    {% for message in messages %}
+      <div>{{ message }}</div>
+    {% endfor %}
+  {% endif %} {% endcomment %}
+  <p>Are you sure you want to logout?</p>
+  <form method="POST">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+  </form>
+{% endblock %}
