@@ -1,0 +1,52 @@
+
+Django Permissions Series
+   1. Django Model Level Permissions ( Admin Site )
+   2. Django Object Level Permissions ( Admin Site )
+   3. MLO - Views and Templates
+   4. OLP - Views and Templates
+   5. ...
+
+Learning Topic / Outcomes
+   * Explored Django Permissions System
+   * Authorisation and Authentication   
+   * User Objects
+   * Inspact Permission Models
+   * Applying Permission to Users and Groups
+   * Assigning Admin Site Model Permissions
+
+Authentication vs Permissions ( Authorisation )
+   * Authentication - determining the identify of a user, server, or client
+   * Authorisation - determines what resources a user can access
+
+User Objects 
+   * User objects core to the authentication System
+      - Superusers
+      - Staff
+      - User
+
+Common Authorisation Methodologies
+   * Role-based access cotrols ( RBAC )
+   * Attribute-based access control ( ABAC )
+
+Permissions ( Authorisation )
+   * Django comes with a built-in permissions system ( Django admin site )
+
+django.contrib.auth
+   * Four default permissions:
+      - add,
+      - change,
+      - delete,
+      - and veiw
+   * Created for each Django model
+   * More ...
+
+Django
+Permissions
+   * Object Level Permissions
+   * Django Guardian Introduction
+
+Learning Topic / Outcomes
+   * Install Django Guardian   <==  pip install django-guardian
+   * Applying Object Level Permissions
+   * Configure OLP Admin Site Models
+
